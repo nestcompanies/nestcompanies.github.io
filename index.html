@@ -1,340 +1,714 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nest Companies LLC</title>
+  <meta charset="UTF-8" />
+  <title>Nest Companies LLC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Nest Companies LLC helps organizations strengthen supply chains, mitigate cyber risk, and design practical automation and controls."
+  />
+  <style>
+    :root {
+      --bg: #050608;
+      --bg-alt: #0b0d11;
+      --card: #101319;
+      --border: #242936;
+      --primary: #ffffff;
+      --muted: #b3bccf;
+      --muted-soft: #7e8596;
+      --accent: #4da3ff;
+      --accent-soft: rgba(77, 163, 255, 0.12);
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --shadow-main: 0 24px 60px rgba(0, 0, 0, 0.75);
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.55);
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      --section-gap: 82px;
+    }
 
-<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #000;
-        color: white;
+      font-family: var(--font-main);
+      background: radial-gradient(circle at top, #151824 0, #020308 45%, #000 100%);
+      color: var(--primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* Header */
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 18px 72px;
+    }
+
     header {
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        padding:35px 60px;
-        color:white;
-        font-size:18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 10px 0 18px;
     }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo-wrap {
+      width: 46px;
+      height: 32px;
+    }
+
+    .brand-logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 600;
+    }
+
+    nav {
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      display: flex;
+      gap: 22px;
+    }
+
     nav a {
-        margin:0 22px;
-        color:white;
-        text-decoration:none;
-        letter-spacing:2px;
+      color: var(--muted);
+      position: relative;
+      padding-bottom: 3px;
     }
-    nav a:hover { color:#0A5CFF; }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.18s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Shared section layout */
+
+    section {
+      margin-top: var(--section-gap);
+    }
+
+    .section-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.9rem;
+      color: var(--muted-soft);
+      margin-bottom: 18px;
+    }
 
     /* Hero */
+
     .hero {
-        background: linear-gradient(to bottom right,#0B1526,#000);
-        padding:120px 90px;
-        border-radius:25px;
-        width:calc(100% - 180px);
-        margin:40px auto;
-    }
-    .hero h1 { font-size:48px; font-weight:700; line-height:1.25; }
-    .hero p { font-size:19px; max-width:750px; }
-
-    /* WAREHOUSE LANDSCAPE – zoomed out & darker */
-    .warehouse-section {
-        width:calc(100% - 180px);
-        margin:40px auto 0;
-        border-radius:25px;
-        overflow:hidden;
-        position:relative;
-        min-height:260px;
-        background:#000;
-    }
-    .warehouse-bg {
-        position:absolute;
-        inset:0;
-        background:url('warehouse.png') center/contain no-repeat; /* zoomed out so full warehouse/trucks show */
-        opacity:0.9;
-        filter:brightness(0.55) contrast(1.2) saturate(1.1);      /* darker, deep blue */
-    }
-    .warehouse-overlay {
-        position:absolute;
-        inset:0;
-        background:
-            radial-gradient(circle at top left, rgba(10,92,255,0.16), transparent),
-            linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.8)); /* darker overlay for text readability */
-    }
-    .warehouse-content {
-        position:relative;
-        padding:40px 60px;
-        z-index:2;
-        text-shadow:0 3px 12px rgba(0,0,0,0.9); /* keeps “Supply Chain Landscape” crisp */
-    }
-    .warehouse-content h2 {
-        letter-spacing:4px;
-        color:#0A5CFF;
-        margin-bottom:14px;
-    }
-    .warehouse-content p {
-        max-width:700px;
-        font-size:17px;
+      margin-top: 28px;
+      padding: 34px 28px 32px;
+      border-radius: var(--radius-lg);
+      background: radial-gradient(
+          circle at top left,
+          rgba(77, 163, 255, 0.35),
+          transparent 55%
+        ),
+        linear-gradient(145deg, #050711, #050608 42%, #020308 100%);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      display: grid;
+      grid-template-columns: minmax(0, 3.2fr) minmax(0, 2.5fr);
+      gap: 28px;
+      align-items: center;
     }
 
-    /* SERVICES */
-    .services-section {
-        width:calc(100% - 200px);
-        margin:70px auto 0;
-    }
-    .services-section h2 {
-        letter-spacing:4px;
-        color:#0A5CFF;
-        margin-bottom:26px;
+    .hero-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.78rem;
+      color: var(--muted-soft);
+      margin-bottom: 10px;
     }
 
-    /* grid so all boxes align; cards stretch to same height */
+    .hero h2 {
+      font-size: clamp(2rem, 3vw, 2.55rem);
+      line-height: 1.12;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 0.98rem;
+      color: var(--muted);
+      max-width: 32rem;
+    }
+
+    .hero p strong {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.78rem;
+      color: var(--muted-soft);
+      background: rgba(3, 8, 23, 0.6);
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-panel {
+      background: radial-gradient(circle at top left, #1b2844, #050608);
+      border-radius: 18px;
+      padding: 18px 18px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-panel-title {
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted-soft);
+      margin-bottom: 10px;
+    }
+
+    .hero-panel-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .hero-chip {
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(3, 9, 20, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.84rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .hero-chip span {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted-soft);
+    }
+
+    /* Supply chain landscape */
+
+    .landscape {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-main);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background:
+        linear-gradient(
+          110deg,
+          rgba(5, 7, 18, 0.96) 0%,
+          rgba(5, 7, 18, 0.9) 45%,
+          rgba(5, 7, 18, 0.86) 65%,
+          rgba(5, 7, 18, 0.9) 100%
+        ),
+        url("warehouse.png") center right/cover no-repeat;
+      background-blend-mode: multiply;
+    }
+
+    .landscape-inner {
+      padding: 32px 32px 34px;
+      max-width: 640px;
+    }
+
+    .landscape-title {
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.9rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .landscape h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .landscape p {
+      font-size: 0.96rem;
+      color: var(--muted);
+    }
+
+    /* Services */
+
+    #services .section-title {
+      color: var(--muted-soft);
+    }
+
     .services-grid {
-        display:grid;
-        grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-        gap:24px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
     }
+
     .service-card {
-        background:rgba(255,255,255,0.03);
-        border-radius:20px;
-        padding:26px 28px 30px;
-        border:1px solid rgba(255,255,255,0.12);
-        display:flex;
-        flex-direction:column;
-        height:100%;          /* equal height in each grid cell */
+      background: var(--card);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      padding: 18px 18px 18px;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-height: 190px;
     }
+
     .service-pill {
-        display:inline-block;
-        padding:6px 16px;
-        border-radius:999px;
-        background:#0A5CFF;     
-        color:white;
-        font-size:12px;
-        letter-spacing:2px;
-        margin-bottom:16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(77, 163, 255, 0.4);
+      background: var(--accent-soft);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      margin-bottom: 4px;
     }
-    .service-card h3 {
-        margin:0 0 10px;
-        font-size:20px;
+
+    .service-card h4 {
+      font-size: 1.02rem;
+      font-weight: 600;
     }
+
     .service-card p {
-        margin:0;
-        font-size:15px;
-        line-height:1.6;
-        color:#e2e2e2;
-        flex:1;               /* pushes cards to a consistent layout */
+      font-size: 0.9rem;
+      color: var(--muted);
     }
 
-    /* ABOUT */
-    .about {
-        width:calc(100% - 200px);
-        margin:60px auto 0;
-        padding:50px;
-        border-radius:25px;
-        background:rgba(255,255,255,0.03);
-        border:1px solid rgba(255,255,255,0.08);
-    }
-    .about h2 {
-        letter-spacing:4px;
-        color:#0A5CFF;
-        margin-bottom:20px;
-    }
-    .about p {
-        font-size:17px;
-        max-width:800px;
-        margin-bottom:12px;
+    /* About */
+
+    #about .section-title {
+      margin-bottom: 14px;
     }
 
-    /* CONTACT */
-    #contact {
-        text-align:center;
-        margin-top:120px;
-    }
-    #contact h2 {
-        letter-spacing:3px;
-        color:#0A5CFF;
-    }
-    .contact-buttons {
-        display:flex;
-        justify-content:center;
-        gap:18px;
-        margin-top:25px;
-    }
-    .cta-btn {
-        background:#0A5CFF;
-        color:white;
-        padding:12px 30px;
-        border-radius:6px;
-        border:none;
-        font-size:15px;
-        letter-spacing:1px;
-        cursor:pointer;
-    }
-    .cta-btn:hover { background:#2571FF; }
-
-    #formBox,#calendarBox { display:none;margin-top:30px; }
-
-    iframe {
-        width:60%;
-        border:none;
-        background:#0A0A0A;
-        border-radius:10px;
+    .about-card {
+      background: var(--card);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      padding: 20px 20px 18px;
+      box-shadow: var(--shadow-soft);
     }
 
-    .office-image {
-        width:25%;
-        margin-top:60px;
-        border-radius:20px;
-        opacity:.92;
+    .about-card h4 {
+      font-size: 1.02rem;
+      margin-bottom: 6px;
+    }
+
+    .about-card p {
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+
+    /* Offices image inside contact */
+
+    .offices-strip {
+      margin-top: 22px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #030712;
+    }
+
+    .offices-strip img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Contact */
+
+    #contact .section-title {
+      margin-bottom: 12px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .contact-card {
+      background: var(--card);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-toggle {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .btn-tab {
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(77, 163, 255, 0.7);
+      background: transparent;
+      color: var(--accent);
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      cursor: pointer;
+    }
+
+    .btn-tab.active {
+      background: var(--accent);
+      color: #02040a;
+      box-shadow: 0 14px 26px rgba(77, 163, 255, 0.5);
+    }
+
+    .embed-wrap {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #020617;
+      min-height: 360px;
+    }
+
+    .embed-wrap iframe {
+      width: 100%;
+      height: 360px;
+    }
+
+    .contact-note {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .contact-note strong {
+      color: var(--accent);
     }
 
     footer {
-        margin-top:60px;
-        padding:20px 0 35px;
-        text-align:center;
-        font-size:13px;
-        color:#8c8c8c;
-        border-top:1px solid rgba(255,255,255,0.08);
-        width:calc(100% - 200px);
-        margin-left:auto;
-        margin-right:auto;
+      margin-top: 42px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--muted-soft);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
     }
 
-    @media (max-width: 900px){
-        .hero,
-        .warehouse-section,
-        .services-section,
-        .about,
-        footer {
-            width:calc(100% - 40px);
-            padding-left:20px;
-            padding-right:20px;
-        }
-        iframe { width:90%; }
-        .office-image { width:60%; }
-        header {
-            flex-direction:column;
-            align-items:flex-start;
-            gap:16px;
-            padding:25px 20px;
-        }
-        nav { font-size:14px; }
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel {
+        order: -1;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
     }
-</style>
 
-<script>
-function toggleForm(target){
-    document.getElementById("formBox").style.display="none";
-    document.getElementById("calendarBox").style.display="none";
-    document.getElementById(target).style.display="block";
-    window.scrollTo({top:document.body.scrollHeight,behavior:"smooth"});
-}
-</script>
+    @media (max-width: 640px) {
+      .page {
+        padding-inline: 14px;
+      }
 
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        padding: 24px 18px 24px;
+      }
+
+      .landscape-inner {
+        padding: 24px 18px 26px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <div class="brand-logo-wrap">
+          <img src="logo.png" alt="Nest Companies LLC logo" />
+        </div>
+        <div class="brand-name">Nest Companies LLC</div>
+      </div>
 
-<header>
-    <div style="display:flex;align-items:center;gap:18px;">
-        <img src="logo.png" style="height:40px;" alt="Nest Companies LLC logo">
-        <span style="font-size:22px;letter-spacing:3px;">NEST COMPANIES LLC</span>
-    </div>
-    <nav>
-        <a href="#services">SERVICES</a>
-        <a href="#about">ABOUT</a>
-        <a href="#contact">CONTACT</a>
-    </nav>
-</header>
+      <nav>
+        <a href="#impact">Impact</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-<section class="hero">
-    <h1>Bridging operations, security,<br>and technology to move your business faster.</h1>
-    <p>Nest Companies LLC is a consulting firm at the intersection of 
-    <b>Supply Chain &amp; Logistics, Cybersecurity &amp; Risk Mitigation,</b> and 
-    <b>Technology &amp; Automation.</b></p>
-</section>
-
-<section id="landscape" class="warehouse-section">
-    <div class="warehouse-bg"></div>
-    <div class="warehouse-overlay"></div>
-    <div class="warehouse-content">
-        <h2>SUPPLY CHAIN LANDSCAPE</h2>
-        <p>
-            From high-risk freight operations to complex technology stacks, Nest Companies LLC helps
-            organizations design more resilient, data-driven supply chains. We focus on the practical
-            execution details — networks, carrier controls, fraud prevention, and workflow automation —
-            so your teams can move faster with less noise.
-        </p>
-    </div>
-</section>
-
-<!-- WHERE WE CREATE IMPACT SECTION REMOVED ON PURPOSE -->
-
-<section id="services" class="services-section">
-    <h2>SERVICES</h2>
-    <div class="services-grid">
-
-        <div class="service-card">
-            <div class="service-pill">SUPPLY CHAIN & LOGISTICS</div>
-            <h3>Operational & Network Strategy</h3>
-            <p>Design and refine freight brokerage and managed transportation sales, operations, SOPs, KPIs and visibility tools.</p>
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div>
+          <div class="hero-kicker">Strategic consulting</div>
+          <h2>Bridging operations, security, and technology to move your business faster.</h2>
+          <p>
+            Nest Companies LLC is a <strong>focused consulting firm</strong> at the intersection of
+            <strong>Supply Chain &amp; Logistics</strong>, <strong>Cybersecurity &amp; Risk Mitigation</strong>, and
+            <strong>Technology &amp; Automation</strong>.
+          </p>
+          <div class="hero-tags">
+            <span class="tag">Freight &amp; logistics strategy</span>
+            <span class="tag">Cyber &amp; operational risk</span>
+            <span class="tag">Process &amp; systems automation</span>
+          </div>
         </div>
 
-        <div class="service-card">
-            <div class="service-pill">CYBERSECURITY & RISK</div>
-            <h3>Fraud & Risk Mitigation</h3>
-            <p>Build practical security controls that protect shipments, data, and revenue: vetting workflows, carrier and vendor due diligence, and incident-response procedures tailored to logistics.</p>
+        <aside class="hero-panel">
+          <div class="hero-panel-title">Where we create impact</div>
+          <div class="hero-panel-grid">
+            <div class="hero-chip">
+              <span>Supply chain &amp; logistics</span>
+              Network optimization, TMS strategy, brokerage enablement, carrier controls.
+            </div>
+            <div class="hero-chip">
+              <span>Cybersecurity &amp; risk</span>
+              Fraud prevention, vendor risk, policy &amp; process design, response playbooks.
+            </div>
+            <div class="hero-chip">
+              <span>Technology &amp; automation</span>
+              Workflow design, systems integration, and automation to reduce manual work.
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- SUPPLY CHAIN LANDSCAPE -->
+      <section id="impact">
+        <div class="section-inner">
+          <div class="landscape">
+            <div class="landscape-inner">
+              <div class="landscape-title">Supply chain landscape</div>
+              <h3>Designing resilient, data-driven operations.</h3>
+              <p>
+                From high-risk freight operations to complex technology stacks, Nest Companies LLC helps organizations
+                design more resilient, data-driven supply chains. We focus on the practical execution details — sales,
+                operations, system controls, fraud prevention, and workflow automation — so your teams can move faster
+                with less noise.
+              </p>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div class="service-card">
-            <div class="service-pill">TECHNOLOGY & AUTOMATION</div>
-            <h3>Systems & Automation Design</h3>
-            <p>Map and automate critical workflows using your existing stack—reducing manual touches, improving data quality, and making teams more scalable.</p>
+      <!-- SERVICES -->
+      <section id="services">
+        <div class="section-inner">
+          <div class="section-title">Services</div>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <div class="service-pill">Supply chain &amp; logistics</div>
+              <h4>Operational &amp; Network Strategy</h4>
+              <p>
+                Design and refine freight brokerage and managed transportation sales, operations, SOPs, KPIs, and
+                visibility tools — building structures that support scalable, resilient growth.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-pill">Cybersecurity &amp; risk</div>
+              <h4>Fraud &amp; Risk Mitigation</h4>
+              <p>
+                Build practical security controls that protect shipments, data, and revenue: vetting workflows, carrier
+                and vendor due diligence, and incident-response procedures tailored to logistics.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-pill">Technology &amp; automation</div>
+              <h4>Systems &amp; Automation Design</h4>
+              <p>
+                Map and automate critical workflows using your existing stack—reducing manual touches, improving data
+                quality, and making teams more scalable.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-pill">Project management</div>
+              <h4>Implementation &amp; Execution</h4>
+              <p>
+                Guide brokerages through complex implementations of new technology—TMS transitions, AI and reporting
+                add-ons, and operational rebuilds—with hands-on project management that aligns teams, timelines,
+                processes, and configuration for a smooth, successful go-live.
+              </p>
+            </article>
+          </div>
         </div>
+      </section>
 
-        <div class="service-card">
-            <div class="service-pill">PROJECT MANAGEMENT</div>
-            <h3>Implementation & Execution</h3>
-            <p>Ensuring brokerages implement new technology successfully — including AI tooling, reporting systems, bolt-on automations, and full TMS transitions or operational rebuilds. We align teams, timelines, process requirements and system configuration, reducing disruption and accelerating go-live readiness.</p>
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="section-inner">
+          <div class="section-title">About Nest Companies</div>
+          <div class="about-card">
+            <h4>Advisors at the intersection of freight, security, and technology.</h4>
+            <p>
+              Nest Companies LLC was created to help organizations operate with more confidence in complex, high-risk
+              environments. We combine hands-on supply chain and logistics experience with a practical approach to
+              cybersecurity, systems design, and automation.
+            </p>
+          </div>
         </div>
+      </section>
 
-    </div>
-</section>
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="section-inner">
+          <div class="section-title">Contact</div>
+          <div class="contact-grid">
+            <div class="contact-card">
+              <div class="contact-toggle">
+                <button class="btn-tab active" data-target="form">Send us a message</button>
+                <button class="btn-tab" data-target="calendar">Schedule a conversation</button>
+              </div>
 
-<section id="about" class="about">
-    <h2>ABOUT NEST COMPANIES LLC</h2>
-    <p>From high-risk freight operations to complex technology stacks, Nest Companies LLC helps organizations design more resilient, data-driven supply chains. We focus on the practical execution details — sales, operations, system controls, fraud prevention, and workflow automation — so your teams can move faster with less noise.</p>
-</section>
+              <div class="embed-wrap" id="contact-form-wrap">
+                <iframe aria-label="Website" frameborder="0" src="https://forms.zohopublic.com/sbirdnestcomp1/form/Website/formperma/u7Vw87et6J9spuCuqfTT7vNYdU3qKUfj0xtJniqSvws"></iframe>
+              </div>
 
-<section id="contact">
-    <h2>CONTACT</h2>
+              <div class="embed-wrap" id="contact-calendar-wrap" style="display:none;">
+                <iframe
+                  src="https://calendar.zoho.com/eventreqForm/zz0801123017b5e3754e08cd7b15cf702a2aa40cfe2ee826cd3436d76332ad48e3ce33ffba9348ba1021b1494dcf253a2d52540d3b?theme=0&l=en&tz=America%2FChicago"
+                  title="Info @ Nest"
+                  frameborder="0"
+                  scrolling="no"
+                  marginwidth="0"
+                  marginheight="0"
+                  allowtransparency="true"
+                ></iframe>
+              </div>
+            </div>
 
-    <div class="contact-buttons">
-        <button class="cta-btn" onclick="toggleForm('formBox')">SEND US A MESSAGE</button>
-        <button class="cta-btn" onclick="toggleForm('calendarBox')">SCHEDULE A CONVERSATION</button>
-    </div>
+            <div class="contact-card">
+              <p class="contact-note">
+                <strong>Let’s start with a conversation.</strong><br /><br />
+                Tell us where you’re feeling the most pressure—whether that’s freight operations, cyber risk, or manual
+                processes that won’t scale. We’ll respond with next steps and, if it makes sense, schedule an initial
+                consultation.
+              </p>
+              <p class="contact-note" style="margin-top: 12px;">
+                Prefer email? Reach out directly at <strong>info@nestcompaniesllc.com</strong>.
+              </p>
 
-    <div id="formBox">
-        <iframe height="480px"
-            src="https://forms.zohopublic.com/sbirdnestcomp1/form/Website/formperma/u7Vw87et6J9spuCuqfTT7vNYdU3qKUfj0xtJniqSvws">
-        </iframe>
-    </div>
+              <div class="offices-strip" style="margin-top: 20px;">
+                <img src="offices.png" alt="Offices in Overland Park, KS and Plano, TX" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-    <div id="calendarBox">
-        <iframe height="350px"
-            src="https://calendar.zoho.com/eventreqForm/zz0801123017b5e3754e08cd7b15cf702a2aa40cfe2ee826cd3436d76332ad48e3ce33ffba9348ba1021b1494dcf253a2d52540d3b?theme=0&l=en&tz=America%2FChicago">
-        </iframe>
-    </div>
+    <footer>
+      <span>© <span id="year"></span> Nest Companies LLC. All rights reserved.</span>
+      <span>Supply Chain &amp; Logistics · Cybersecurity &amp; Risk · Technology &amp; Automation</span>
+    </footer>
+  </div>
 
-    <img src="offices.png" class="office-image" alt="Offices in Overland Park, KS and Plano, TX">
-</section>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-<footer>
-    © <script>document.write(new Date().getFullYear());</script> Nest Companies LLC. All rights reserved.
-</footer>
+    const tabs = document.querySelectorAll(".btn-tab");
+    const formWrap = document.getElementById("contact-form-wrap");
+    const calendarWrap = document.getElementById("contact-calendar-wrap");
 
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+
+        if (tab.dataset.target === "form") {
+          formWrap.style.display = "block";
+          calendarWrap.style.display = "none";
+        } else {
+          formWrap.style.display = "none";
+          calendarWrap.style.display = "block";
+        }
+      });
+    });
+  </script>
 </body>
 </html>
