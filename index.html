@@ -1,653 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Nest Companies LLC | Consulting</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Nest Companies LLC is a focused consulting firm at the intersection of Supply Chain & Logistics, Cybersecurity & Risk Mitigation, and Technology & Automation."
-  />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nest Companies LLC</title>
 
-  <style>
-    :root {
-      --bg: #050505;
-      --bg-alt: #101010;
-      --primary: #ffffff;
-      --muted: #d4d4d4;
-      --border: #262626;
-      --highlight: #2b8bff; /* Royal / neon blue */
-      --shadow: 0 18px 40px rgba(0,0,0,0.6);
-      --radius-xl: 24px;
-      --radius-lg: 18px;
-      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      -webkit-tap-highlight-color: transparent;
-    }
-
+<style>
     body {
-      font-family: var(--font-main);
-      background: radial-gradient(circle at top, #151515 0, #000 40%, #000 100%);
-      color: var(--primary);
-      line-height: 1.6;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #000;
+        color: white;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 24px 18px 60px;
-    }
-
-    /* HEADER */
-
+    /* Header */
     header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 8px 0 18px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:35px 60px;
+        color:white;
+        font-size:18px;
     }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .brand-logo-wrap {
-      width: 68px;
-      height: 44px;
-    }
-
-    .brand-logo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .brand-text h1 {
-      font-size: 1.1rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .brand-text span {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-top: 2px;
-    }
-
-    nav {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-    }
-
     nav a {
-      margin-left: 16px;
-      color: var(--muted);
-      position: relative;
+        margin:0 22px;
+        color:white;
+        text-decoration:none;
+        letter-spacing:2px;
     }
+    nav a:hover { color:#0A5CFF; }
 
-    nav a:first-child {
-      margin-left: 0;
-    }
-
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0;
-      height: 1px;
-      background: var(--highlight);
-      transition: width 0.2s ease;
-    }
-
-    nav a:hover {
-      color: var(--primary);
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    /* HERO */
-
+    /* Hero */
     .hero {
-      margin-top: 24px;
-      padding: 32px 26px 32px;
-      border-radius: var(--radius-xl);
-      background:
-        linear-gradient(145deg, rgba(255,255,255,0.06), rgba(0,0,0,0.95)),
-        radial-gradient(circle at top right, rgba(43,139,255,0.22), transparent);
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,0.08);
+        background: linear-gradient(to bottom right,#0B1526,#000);
+        padding:120px 90px;
+        border-radius:25px;
+        width:calc(100% - 180px);
+        margin:40px auto;
+    }
+    .hero h1 { font-size:48px; font-weight:700; line-height:1.25; }
+    .hero p { font-size:19px; max-width:750px; }
+
+    /* WHERE WE CREATE IMPACT */
+    .impact {
+        width:calc(100% - 200px);
+        margin:90px auto;
+        background:rgba(255,255,255,0.03);
+        padding:50px;
+        border-radius:25px;
+        border:1px solid rgba(255,255,255,0.08);
+    }
+    .impact h2 { letter-spacing:4px;color:#0A5CFF;margin-bottom:32px; }
+    .impact-box {
+        border:1px solid rgba(255,255,255,0.12);
+        border-radius:16px;
+        padding:32px;margin-bottom:25px;
+        background:rgba(255,255,255,0.03);
+    }
+    .impact-box h3 { color:#0A5CFF;margin-bottom:12px; }
+
+    /* Contact Buttons */
+    .contact-buttons {
+        display:flex;justify-content:center;gap:18px;margin-top:25px;
+    }
+    .cta-btn {
+        background:#0A5CFF;color:white;padding:12px 30px;
+        border-radius:6px;border:none;font-size:15px;
+        letter-spacing:1px;cursor:pointer;
+    }
+    .cta-btn:hover { background:#2571FF; }
+
+    /* Hidden panels */
+    #formBox,#calendarBox { display:none;margin-top:30px; }
+
+    iframe {
+        width:60%;
+        border:none;
+        background:#0A0A0A;
+        border-radius:10px;
     }
 
-    .hero-kicker {
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-bottom: 10px;
+    /* Office Map */
+    .office-image {
+        width:25%;
+        margin-top:60px;
+        border-radius:20px;
+        opacity:.92;
     }
+</style>
 
-    .hero h2 {
-      font-size: clamp(2.1rem, 3vw, 2.6rem);
-      line-height: 1.1;
-      margin-bottom: 16px;
-      color: var(--primary);
-    }
+<script>
+function toggleForm(target){
+    document.getElementById("formBox").style.display="none";
+    document.getElementById("calendarBox").style.display="none";
+    document.getElementById(target).style.display="block";
+    window.scrollTo({top:document.body.scrollHeight,behavior:"smooth"});
+}
+</script>
 
-    .hero-cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      align-items: center;
-      margin-top: 10px;
-    }
-
-    .btn-primary {
-      padding: 12px 26px;
-      border-radius: 999px;
-      border: none;
-      background: var(--highlight);
-      color: #050910;
-      font-weight: 600;
-      font-size: 0.96rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      cursor: pointer;
-      box-shadow: 0 16px 30px rgba(43,139,255,0.55);
-    }
-
-    .btn-primary:hover {
-      filter: brightness(1.05);
-      transform: translateY(-1px);
-    }
-
-    .hero-note {
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-
-    /* GENERIC SECTIONS */
-
-    section {
-      margin-top: 56px;
-    }
-
-    .section-title {
-      font-size: 1.05rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--highlight); /* section titles in blue */
-      margin-bottom: 16px;
-    }
-
-    .card {
-      background: var(--bg-alt);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      padding: 20px 20px 18px;
-      box-shadow: 0 12px 26px rgba(0,0,0,0.45);
-    }
-
-    .card h4 {
-      font-size: 1rem;
-      margin-bottom: 6px;
-      color: var(--primary);
-    }
-
-    .card p {
-      font-size: 0.94rem;
-      color: var(--primary);
-      opacity: 0.95;
-    }
-
-    /* IMPACT SECTION USING warehouse.png */
-
-    #impact {
-      position: relative;
-      padding: 32px 26px 26px;
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: var(--shadow);
-    }
-
-    #impact::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(to bottom, rgba(0,0,0,0.96), rgba(0,0,0,0.88)),
-        url("warehouse.png") center/cover no-repeat;
-      opacity: 0.9;
-      z-index: -1;
-    }
-
-    .impact-grid {
-      display: grid;
-      gap: 14px;
-    }
-
-    .impact-card {
-      padding: 16px 18px;
-      border-radius: 16px;
-      background: rgba(7,7,9,0.9);
-      border: 1px solid rgba(255,255,255,0.16);
-    }
-
-    .impact-card-title {
-      font-size: 0.9rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-
-    .impact-card p {
-      font-size: 0.98rem;
-      color: var(--primary);
-    }
-
-    /* SERVICES */
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 4px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--highlight);
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      background: var(--highlight);
-      color: #02040a;
-      margin-bottom: 10px;
-    }
-
-    /* ABOUT */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
-      gap: 22px;
-    }
-
-    .about-grid p {
-      font-size: 0.96rem;
-    }
-
-    .stack-list {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 8px;
-      margin-top: 10px;
-      font-size: 0.88rem;
-      color: var(--muted);
-    }
-
-    /* CONTACT */
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
-      gap: 22px;
-      align-items: flex-start;
-    }
-
-    .zoho-form iframe,
-    .calendar-iframe iframe {
-      width: 100%;
-      border: none;
-      border-radius: 14px;
-      background: #000;
-    }
-
-    .contact-note {
-      font-size: 0.9rem;
-      color: var(--primary);
-      opacity: 0.96;
-    }
-
-    .contact-note strong {
-      color: var(--primary);
-    }
-
-    /* Contact toggles */
-
-    .contact-toggle {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-
-    .toggle-btn {
-      padding: 10px 18px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #05070a;
-      color: var(--primary);
-      font-size: 0.85rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      cursor: pointer;
-    }
-
-    .toggle-btn:hover {
-      border-color: rgba(255,255,255,0.35);
-    }
-
-    .toggle-btn.active {
-      background: var(--highlight);
-      color: #050910;
-      border-color: var(--highlight);
-      box-shadow: 0 12px 26px rgba(43,139,255,0.5);
-    }
-
-    .contact-pane {
-      display: none;
-    }
-
-    .contact-pane.active {
-      display: block;
-    }
-
-    .office-card {
-      margin-top: 22px;
-      border-radius: 18px;
-      overflow: hidden;
-      background: #05070a;
-      border: 1px solid var(--border);
-      box-shadow: 0 16px 32px rgba(0,0,0,0.55);
-    }
-
-    .office-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    footer {
-      margin-top: 40px;
-      padding-top: 16px;
-      border-top: 1px solid var(--border);
-      font-size: 0.8rem;
-      color: var(--muted);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 8px;
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 860px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .page {
-        padding-inline: 16px;
-      }
-
-      .hero {
-        padding: 24px 18px 24px;
-      }
-
-      .hero h2 {
-        font-size: 1.85rem;
-      }
-    }
-  </style>
 </head>
-
 <body>
-  <div class="page">
-    <header>
-      <div class="brand">
-        <div class="brand-logo-wrap">
-          <img src="logo.png" alt="Nest Companies LLC logo" />
-        </div>
-        <div class="brand-text">
-          <h1>Nest Companies LLC</h1>
-          <span>Consulting</span>
-        </div>
-      </div>
 
-      <nav>
-        <a href="#impact">Impact</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+<header>
+    <div style="display:flex;align-items:center;gap:18px;">
+        <img src="logo.png" style="height:40px;">
+        <span style="font-size:22px;letter-spacing:3px;">NEST COMPANIES LLC</span>
+    </div>
+    <nav>
+        <a href="#impact">IMPACT</a>
+        <a href="#services">SERVICES</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+</header>
 
-    <main>
-      <!-- HERO (cleaned) -->
-      <section class="hero">
-        <div>
-          <div class="hero-kicker">Strategic Consulting</div>
-          <h2>Bridging operations, security, and technology to move your business faster.</h2>
+<!-- HERO -->
+<section class="hero">
+    <h1>Bridging operations, security,<br>and technology to move your business faster.</h1>
+    <p>Nest Companies LLC is a consulting firm at the intersection of 
+    <b>Supply Chain & Logistics, Cybersecurity & Risk Mitigation,</b> and 
+    <b>Technology & Automation.</b></p>
+</section>
 
-          <div class="hero-cta">
-            <a href="#contact"><button class="btn-primary">Schedule a Conversation</button></a>
-            <span class="hero-note">Advisory, project-based, and fractional support available.</span>
-          </div>
-        </div>
-      </section>
+<!-- WHERE WE CREATE IMPACT (KEPT AS REQUESTED) -->
+<section id="impact" class="impact">
 
-      <!-- IMPACT SECTION (KEEPING this one) -->
-      <section id="impact">
-        <div class="section-title">Where we create impact</div>
-        <div class="impact-grid">
-          <div class="impact-card">
-            <div class="impact-card-title">Supply chain &amp; logistics</div>
-            <p>Network optimization, TMS strategy, brokerage enablement, carrier controls.</p>
-          </div>
-          <div class="impact-card">
-            <div class="impact-card-title">Cybersecurity &amp; risk</div>
-            <p>Fraud prevention, vendor risk, policy &amp; process design, response playbooks.</p>
-          </div>
-          <div class="impact-card">
-            <div class="impact-card-title">Technology &amp; automation</div>
-            <p>Workflow design, systems integration, and automation to reduce manual work.</p>
-          </div>
-        </div>
-      </section>
+    <h2>WHERE WE CREATE IMPACT</h2>
 
-      <!-- SERVICES -->
-      <section id="services">
-        <div class="section-title">Services</div>
-        <div class="services-grid">
-          <article class="card">
-            <div class="pill">Supply Chain &amp; Logistics</div>
-            <h4>Operational &amp; Network Strategy</h4>
-            <p>
-              Design and refine freight brokerage and managed transportation operations, from carrier strategy and
-              KPIs to TMS and visibility tooling selection.
-            </p>
-          </article>
+    <div class="impact-box">
+        <h3>SUPPLY CHAIN & LOGISTICS</h3>
+        Network optimization, TMS strategy, brokerage enablement, carrier controls.
+    </div>
 
-          <article class="card">
-            <div class="pill">Cybersecurity &amp; Risk</div>
-            <h4>Fraud &amp; Risk Mitigation</h4>
-            <p>
-              Build practical controls that protect shipments, data, and revenue: vetting workflows, carrier and vendor
-              due diligence, and incident-response procedures tailored to logistics.
-            </p>
-          </article>
+    <div class="impact-box">
+        <h3>CYBERSECURITY & RISK</h3>
+        Fraud prevention, vendor risk, policy & process design, response playbooks.
+    </div>
 
-          <article class="card">
-            <div class="pill">Technology &amp; Automation</div>
-            <h4>Systems &amp; Automation Design</h4>
-            <p>
-              Map and automate critical workflows using your existing stack—reducing manual touches, improving data
-              quality, and making teams more scalable.
-            </p>
-          </article>
-        </div>
-      </section>
+    <div class="impact-box">
+        <h3>TECHNOLOGY & AUTOMATION</h3>
+        Workflow design, systems integration, automation to reduce manual work.
+    </div>
+</section>
 
-      <!-- ABOUT -->
-      <section id="about">
-        <div class="section-title">About Nest Companies LLC</div>
-        <div class="about-grid">
-          <div class="card">
-            <h4>Advisors at the intersection of freight, security, and technology.</h4>
-            <p>
-              Nest Companies LLC was created to help organizations operate with more confidence in complex, high-risk
-              environments. We combine hands-on supply chain and logistics experience with a practical approach to
-              cybersecurity and automation.
-            </p>
-            <p style="margin-top: 8px;">
-              We work as an extension of your team—clarifying the real problems, designing the right processes, and
-              aligning the technology and partners needed to support them.
-            </p>
-          </div>
+<!-- CONTACT -->
+<section id="contact" style="text-align:center;margin-top:120px;">
+    <h2 style="letter-spacing:3px;color:#0A5CFF;">CONTACT</h2>
 
-          <div class="card">
-            <h4>Focus areas</h4>
-            <ul class="stack-list">
-              <li>Freight brokerage &amp; managed transportation</li>
-              <li>Carrier vetting &amp; fraud prevention programs</li>
-              <li>Cybersecurity &amp; vendor risk frameworks</li>
-              <li>Process mapping &amp; SOP development</li>
-              <li>TMS, visibility, and integration strategy</li>
-              <li>Automation of repeatable workflows</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+    <div class="contact-buttons">
+        <button class="cta-btn" onclick="toggleForm('formBox')">SEND US A MESSAGE</button>
+        <button class="cta-btn" onclick="toggleForm('calendarBox')">SCHEDULE A CONVERSATION</button>
+    </div>
 
-      <!-- CONTACT -->
-      <section id="contact">
-        <div class="section-title">Contact</div>
+    <!-- Hidden Panels -->
+    <div id="formBox">
+        <iframe height="480px"
+            src="https://forms.zohopublic.com/sbirdnestcomp1/form/Website/formperma/u7Vw87et6J9spuCuqfTT7vNYdU3qKUfj0xtJniqSvws">
+        </iframe>
+    </div>
 
-        <!-- Buttons row -->
-        <div class="contact-toggle">
-          <button class="toggle-btn" data-target="contact-message">
-            Send us a message
-          </button>
-          <button class="toggle-btn" data-target="contact-calendar">
-            Schedule a conversation
-          </button>
-        </div>
+    <div id="calendarBox">
+        <iframe height="350px"
+            src="https://calendar.zoho.com/eventreqForm/zz0801123017b5e3754e08cd7b15cf702a2aa40cfe2ee826cd3436d76332ad48e3ce33ffba9348ba1021b1494dcf253a2d52540d3b?theme=0&l=en&tz=America%2FChicago">
+        </iframe>
+    </div>
 
-        <div class="contact-grid">
-          <!-- Zoho Website Form (hidden until button click) -->
-          <div id="contact-message" class="card contact-pane">
-            <h4>Project inquiry</h4>
-            <iframe
-              aria-label="Website"
-              frameborder="0"
-              src="https://forms.zohopublic.com/sbirdnestcomp1/form/Website/formperma/u7Vw87et6J9spuCuqfTT7vNYdU3qKUfj0xtJniqSvws"
-              style="height:500px;width:100%;border:none;">
-            </iframe>
-          </div>
+    <img src="offices.png" class="office-image">
+</section>
 
-          <!-- Calendar (hidden until button click) -->
-          <div id="contact-calendar" class="card contact-pane">
-            <h4>Schedule a conversation</h4>
-            <p class="contact-note" style="margin-bottom:10px;">
-              Pick a time that works best for you using the calendar below.
-            </p>
-            <div class="calendar-iframe" style="margin-bottom:16px;">
-              <iframe
-                src="https://calendar.zoho.com/eventreqForm/zz0801123017b5e3754e08cd7b15cf702a2aa40cfe2ee826cd3436d76332ad48e3ce33ffba9348ba1021b1494dcf253a2d52540d3b?theme=0&l=en&tz=America%2FChicago"
-                title="Info @ Nest"
-                frameborder="0"
-                scrolling="no"
-                marginwidth="0"
-                marginheight="0"
-                allowtransparency="true"
-                style="width:100%;height:500px;border:none;">
-              </iframe>
-            </div>
-            <p class="contact-note">
-              Prefer email? Reach out directly at <strong>info@nestcompaniesllc.com</strong>.
-            </p>
-          </div>
-        </div>
-
-        <!-- Office image card -->
-        <div class="office-card">
-          <img src="offices.png" alt="Office locations in Plano, TX and Overland Park, KS" />
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <span>© <span id="year"></span> Nest Companies LLC. All rights reserved.</span>
-      <span>Supply Chain &amp; Logistics · Cybersecurity &amp; Risk · Technology &amp; Automation</span>
-    </footer>
-  </div>
-
-  <script>
-    // Footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Contact toggles
-    const toggleButtons = document.querySelectorAll(".toggle-btn");
-    const panes = document.querySelectorAll(".contact-pane");
-
-    toggleButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const targetId = btn.getAttribute("data-target");
-
-        // Button active state
-        toggleButtons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-
-        // Show only the selected pane
-        panes.forEach(pane => {
-          if (pane.id === targetId) {
-            pane.classList.add("active");
-          } else {
-            pane.classList.remove("active");
-          }
-        });
-      });
-    });
-  </script>
 </body>
 </html>
