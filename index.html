@@ -41,7 +41,7 @@
     .hero h1 { font-size:48px; font-weight:700; line-height:1.25; }
     .hero p { font-size:19px; max-width:750px; }
 
-    /* Warehouse / Services section */
+    /* Warehouse visual section */
     .warehouse-section {
         width:calc(100% - 180px);
         margin:40px auto 0;
@@ -55,7 +55,7 @@
         position:absolute;
         inset:0;
         background:url('warehouse.png') center/cover no-repeat;
-        opacity:0.45;           /* keep it subtle against black theme */
+        opacity:0.45;
         filter:grayscale(80%);
     }
     .warehouse-overlay {
@@ -97,6 +97,49 @@
     }
     .impact-box h3 { color:#0A5CFF;margin-bottom:12px; }
 
+    /* SERVICES – card layout (restored) */
+    .services-section {
+        width:calc(100% - 200px);
+        margin:40px auto 0;
+    }
+    .services-section h2 {
+        letter-spacing:4px;
+        color:#0A5CFF;
+        margin-bottom:26px;
+    }
+    .services-grid {
+        display:flex;
+        gap:24px;
+        flex-wrap:wrap;
+    }
+    .service-card {
+        flex:1 1 280px;
+        background:rgba(255,255,255,0.03);
+        border-radius:20px;
+        padding:26px 28px 30px;
+        border:1px solid rgba(255,255,255,0.12);
+    }
+    .service-pill {
+        display:inline-block;
+        padding:6px 16px;
+        border-radius:999px;
+        background:#0A5CFF;      /* blue pill like buttons */
+        color:white;
+        font-size:12px;
+        letter-spacing:2px;
+        margin-bottom:16px;
+    }
+    .service-card h3 {
+        margin:0 0 10px;
+        font-size:20px;
+    }
+    .service-card p {
+        margin:0;
+        font-size:15px;
+        line-height:1.6;
+        color:#e2e2e2;
+    }
+
     /* About */
     .about {
         width:calc(100% - 200px);
@@ -115,19 +158,6 @@
         font-size:17px;
         max-width:800px;
         margin-bottom:12px;
-    }
-    .about ul {
-        list-style:none;
-        padding-left:0;
-        margin-top:16px;
-        column-gap:40px;
-        column-count:2;
-        max-width:800px;
-    }
-    .about li {
-        margin-bottom:8px;
-        font-size:15px;
-        color:#e2e2e2;
     }
 
     /* Contact Buttons */
@@ -176,6 +206,7 @@
         .hero,
         .warehouse-section,
         .impact,
+        .services-section,
         .about,
         footer {
             width:calc(100% - 40px);
@@ -227,12 +258,12 @@ function toggleForm(target){
     <b>Technology &amp; Automation.</b></p>
 </section>
 
-<!-- SERVICES / WAREHOUSE IMAGE SECTION -->
-<section id="services" class="warehouse-section">
+<!-- SUPPLY CHAIN LANDSCAPE (warehouse image background) -->
+<section id="landscape" class="warehouse-section">
     <div class="warehouse-bg"></div>
     <div class="warehouse-overlay"></div>
     <div class="warehouse-content">
-        <h2>SERVICES</h2>
+        <h2>SUPPLY CHAIN LANDSCAPE</h2>
         <p>
             From high-risk freight operations to complex technology stacks, Nest Companies LLC helps
             organizations design more resilient, data-driven supply chains. We focus on the practical
@@ -263,6 +294,41 @@ function toggleForm(target){
     </div>
 </section>
 
+<!-- SERVICES – card layout (restored) -->
+<section id="services" class="services-section">
+    <h2>SERVICES</h2>
+    <div class="services-grid">
+        <div class="service-card">
+            <div class="service-pill">SUPPLY CHAIN &amp; LOGISTICS</div>
+            <h3>Operational &amp; Network Strategy</h3>
+            <p>
+                Design and refine freight brokerage and managed transportation operations,
+                from carrier strategy and KPIs to TMS and visibility tooling selection.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-pill">CYBERSECURITY &amp; RISK</div>
+            <h3>Fraud &amp; Risk Mitigation</h3>
+            <p>
+                Build practical controls that protect loads, data, and revenue:
+                vetting workflows, carrier and vendor due diligence, and
+                incident-response procedures tailored to logistics.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-pill">TECHNOLOGY &amp; AUTOMATION</div>
+            <h3>Systems &amp; Automation Design</h3>
+            <p>
+                Map and automate critical workflows using your existing stack—
+                reducing manual touches, improving data quality, and making teams
+                more scalable.
+            </p>
+        </div>
+    </div>
+</section>
+
 <!-- ABOUT -->
 <section id="about" class="about">
     <h2>ABOUT NEST COMPANIES LLC</h2>
@@ -275,15 +341,6 @@ function toggleForm(target){
         We work as an extension of your team — clarifying the real problems, designing the right
         processes, and aligning the technology and partners needed to support them.
     </p>
-
-    <ul>
-        <li>Freight brokerage &amp; managed transportation</li>
-        <li>Carrier vetting &amp; fraud prevention programs</li>
-        <li>Cybersecurity &amp; vendor risk frameworks</li>
-        <li>Process mapping &amp; SOP development</li>
-        <li>TMS, visibility, and integration strategy</li>
-        <li>Automation of repeatable workflows</li>
-    </ul>
 </section>
 
 <!-- CONTACT -->
