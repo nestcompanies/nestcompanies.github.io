@@ -41,6 +41,44 @@
     .hero h1 { font-size:48px; font-weight:700; line-height:1.25; }
     .hero p { font-size:19px; max-width:750px; }
 
+    /* Warehouse / Services section */
+    .warehouse-section {
+        width:calc(100% - 180px);
+        margin:40px auto 0;
+        border-radius:25px;
+        overflow:hidden;
+        position:relative;
+        min-height:260px;
+        background:#000;
+    }
+    .warehouse-bg {
+        position:absolute;
+        inset:0;
+        background:url('warehouse.png') center/cover no-repeat;
+        opacity:0.45;           /* keep it subtle against black theme */
+        filter:grayscale(80%);
+    }
+    .warehouse-overlay {
+        position:absolute;
+        inset:0;
+        background:radial-gradient(circle at top left, rgba(10,92,255,0.4), transparent),
+                   linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.95));
+    }
+    .warehouse-content {
+        position:relative;
+        padding:40px 60px;
+        z-index:2;
+    }
+    .warehouse-content h2 {
+        letter-spacing:4px;
+        color:#0A5CFF;
+        margin-bottom:14px;
+    }
+    .warehouse-content p {
+        max-width:700px;
+        font-size:17px;
+    }
+
     /* WHERE WE CREATE IMPACT */
     .impact {
         width:calc(100% - 200px);
@@ -58,6 +96,39 @@
         background:rgba(255,255,255,0.03);
     }
     .impact-box h3 { color:#0A5CFF;margin-bottom:12px; }
+
+    /* About */
+    .about {
+        width:calc(100% - 200px);
+        margin:40px auto 0;
+        padding:50px;
+        border-radius:25px;
+        background:rgba(255,255,255,0.03);
+        border:1px solid rgba(255,255,255,0.08);
+    }
+    .about h2 {
+        letter-spacing:4px;
+        color:#0A5CFF;
+        margin-bottom:20px;
+    }
+    .about p {
+        font-size:17px;
+        max-width:800px;
+        margin-bottom:12px;
+    }
+    .about ul {
+        list-style:none;
+        padding-left:0;
+        margin-top:16px;
+        column-gap:40px;
+        column-count:2;
+        max-width:800px;
+    }
+    .about li {
+        margin-bottom:8px;
+        font-size:15px;
+        color:#e2e2e2;
+    }
 
     /* Contact Buttons */
     .contact-buttons {
@@ -86,6 +157,40 @@
         margin-top:60px;
         border-radius:20px;
         opacity:.92;
+    }
+
+    /* Simple footer */
+    footer {
+        margin-top:60px;
+        padding:20px 0 35px;
+        text-align:center;
+        font-size:13px;
+        color:#8c8c8c;
+        border-top:1px solid rgba(255,255,255,0.08);
+        width:calc(100% - 200px);
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    @media (max-width: 900px){
+        .hero,
+        .warehouse-section,
+        .impact,
+        .about,
+        footer {
+            width:calc(100% - 40px);
+            padding-left:20px;
+            padding-right:20px;
+        }
+        iframe { width:90%; }
+        .office-image { width:60%; }
+        header {
+            flex-direction:column;
+            align-items:flex-start;
+            gap:16px;
+            padding:25px 20px;
+        }
+        nav { font-size:14px; }
     }
 </style>
 
@@ -118,29 +223,67 @@ function toggleForm(target){
 <section class="hero">
     <h1>Bridging operations, security,<br>and technology to move your business faster.</h1>
     <p>Nest Companies LLC is a consulting firm at the intersection of 
-    <b>Supply Chain & Logistics, Cybersecurity & Risk Mitigation,</b> and 
-    <b>Technology & Automation.</b></p>
+    <b>Supply Chain &amp; Logistics, Cybersecurity &amp; Risk Mitigation,</b> and 
+    <b>Technology &amp; Automation.</b></p>
 </section>
 
-<!-- WHERE WE CREATE IMPACT (KEPT AS REQUESTED) -->
+<!-- SERVICES / WAREHOUSE IMAGE SECTION -->
+<section id="services" class="warehouse-section">
+    <div class="warehouse-bg"></div>
+    <div class="warehouse-overlay"></div>
+    <div class="warehouse-content">
+        <h2>SERVICES</h2>
+        <p>
+            From high-risk freight operations to complex technology stacks, Nest Companies LLC helps
+            organizations design more resilient, data-driven supply chains. We focus on the practical
+            execution details — networks, carrier controls, fraud prevention, and workflow automation —
+            so your teams can move faster with less noise.
+        </p>
+    </div>
+</section>
+
+<!-- WHERE WE CREATE IMPACT -->
 <section id="impact" class="impact">
 
     <h2>WHERE WE CREATE IMPACT</h2>
 
     <div class="impact-box">
-        <h3>SUPPLY CHAIN & LOGISTICS</h3>
+        <h3>SUPPLY CHAIN &amp; LOGISTICS</h3>
         Network optimization, TMS strategy, brokerage enablement, carrier controls.
     </div>
 
     <div class="impact-box">
-        <h3>CYBERSECURITY & RISK</h3>
-        Fraud prevention, vendor risk, policy & process design, response playbooks.
+        <h3>CYBERSECURITY &amp; RISK</h3>
+        Fraud prevention, vendor risk, policy &amp; process design, response playbooks.
     </div>
 
     <div class="impact-box">
-        <h3>TECHNOLOGY & AUTOMATION</h3>
-        Workflow design, systems integration, automation to reduce manual work.
+        <h3>TECHNOLOGY &amp; AUTOMATION</h3>
+        Workflow design, systems integration, and automation to reduce manual work.
     </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+    <h2>ABOUT NEST COMPANIES LLC</h2>
+    <p>
+        Nest Companies LLC was created to help organizations operate with more confidence in complex,
+        high-risk environments. We combine hands-on freight brokerage and managed transportation
+        experience with a practical approach to cybersecurity and automation.
+    </p>
+    <p>
+        We work as an extension of your team — clarifying the real problems, designing the right
+        processes, and aligning the technology and partners needed to support them.
+    </p>
+
+    <ul>
+        <li>Freight brokerage &amp; managed transportation</li>
+        <li>Carrier vetting &amp; fraud prevention programs</li>
+        <li>Cybersecurity &amp; vendor risk frameworks</li>
+        <li>Process mapping &amp; SOP development</li>
+        <li>TMS, visibility, and integration strategy</li>
+        <li>Automation of repeatable workflows</li>
+    </ul>
 </section>
 
 <!-- CONTACT -->
@@ -165,8 +308,12 @@ function toggleForm(target){
         </iframe>
     </div>
 
-    <img src="offices.png" class="office-image">
+    <img src="offices.png" class="office-image" alt="Offices in Overland Park, KS and Plano, TX">
 </section>
+
+<footer>
+    © <script>document.write(new Date().getFullYear());</script> Nest Companies LLC. All rights reserved.
+</footer>
 
 </body>
 </html>
