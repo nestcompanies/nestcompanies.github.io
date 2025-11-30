@@ -41,35 +41,35 @@
     .hero h1 { font-size:48px; font-weight:700; line-height:1.25; }
     .hero p { font-size:19px; max-width:750px; }
 
-    /* WAREHOUSE LANDSCAPE – fills box, zoomed out & darker */
+    /* WAREHOUSE LANDSCAPE – zoomed out & darker */
     .warehouse-section {
         width:calc(100% - 180px);
         margin:40px auto 0;
         border-radius:25px;
         overflow:hidden;
         position:relative;
-        min-height:340px;
+        min-height:260px;
         background:#000;
     }
     .warehouse-bg {
         position:absolute;
         inset:0;
-        background:url('warehouse.png') center top / cover no-repeat; /* fills box */
+        background:url('warehouse.png') center/contain no-repeat; /* zoomed out so full warehouse/trucks show */
         opacity:0.9;
-        filter:brightness(0.55) contrast(1.2) saturate(1.1);
+        filter:brightness(0.55) contrast(1.2) saturate(1.1);      /* darker, deep blue */
     }
     .warehouse-overlay {
         position:absolute;
         inset:0;
         background:
             radial-gradient(circle at top left, rgba(10,92,255,0.16), transparent),
-            linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.8));
+            linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.8)); /* darker overlay for text readability */
     }
     .warehouse-content {
         position:relative;
         padding:40px 60px;
         z-index:2;
-        text-shadow:0 3px 12px rgba(0,0,0,0.9);
+        text-shadow:0 3px 12px rgba(0,0,0,0.9); /* keeps “Supply Chain Landscape” crisp */
     }
     .warehouse-content h2 {
         letter-spacing:4px;
@@ -91,6 +91,8 @@
         color:#0A5CFF;
         margin-bottom:26px;
     }
+
+    /* grid so all boxes align; cards stretch to same height */
     .services-grid {
         display:grid;
         grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -103,13 +105,13 @@
         border:1px solid rgba(255,255,255,0.12);
         display:flex;
         flex-direction:column;
-        height:100%;
+        height:100%;          /* equal height in each grid cell */
     }
     .service-pill {
         display:inline-block;
         padding:6px 16px;
         border-radius:999px;
-        background:#0A5CFF;
+        background:#0A5CFF;     
         color:white;
         font-size:12px;
         letter-spacing:2px;
@@ -124,26 +126,24 @@
         font-size:15px;
         line-height:1.6;
         color:#e2e2e2;
-        flex:1;
+        flex:1;               /* pushes cards to a consistent layout */
     }
 
-    /* ABOUT SECTION – title outside box, same width as services container */
-    .about-section {
+    /* ABOUT */
+    .about {
         width:calc(100% - 200px);
-        margin:70px auto 0;
-    }
-    .about-section h2 {
-        letter-spacing:4px;
-        color:#0A5CFF;
-        margin-bottom:24px;
-    }
-    .about-card {
+        margin:60px auto 0;
         padding:50px;
         border-radius:25px;
         background:rgba(255,255,255,0.03);
         border:1px solid rgba(255,255,255,0.08);
     }
-    .about-card p {
+    .about h2 {
+        letter-spacing:4px;
+        color:#0A5CFF;
+        margin-bottom:20px;
+    }
+    .about p {
         font-size:17px;
         max-width:800px;
         margin-bottom:12px;
@@ -208,13 +208,12 @@
         .hero,
         .warehouse-section,
         .services-section,
-        .about-section,
+        .about,
         footer {
             width:calc(100% - 40px);
             padding-left:20px;
             padding-right:20px;
         }
-        .about-card { padding:30px 22px; }
         iframe { width:90%; }
         .office-image { width:60%; }
         header {
@@ -272,6 +271,8 @@ function toggleForm(target){
     </div>
 </section>
 
+<!-- WHERE WE CREATE IMPACT SECTION REMOVED ON PURPOSE -->
+
 <section id="services" class="services-section">
     <h2>SERVICES</h2>
     <div class="services-grid">
@@ -303,11 +304,9 @@ function toggleForm(target){
     </div>
 </section>
 
-<section id="about" class="about-section">
-    <h2>ABOUT NEST COMPANIES</h2>
-    <div class="about-card">
-        <p>From high-risk freight operations to complex technology stacks, Nest Companies LLC helps organizations design more resilient, data-driven supply chains. We focus on the practical execution details — sales, operations, system controls, fraud prevention, and workflow automation — so your teams can move faster with less noise.</p>
-    </div>
+<section id="about" class="about">
+    <h2>ABOUT NEST COMPANIES LLC</h2>
+    <p>From high-risk freight operations to complex technology stacks, Nest Companies LLC helps organizations design more resilient, data-driven supply chains. We focus on the practical execution details — sales, operations, system controls, fraud prevention, and workflow automation — so your teams can move faster with less noise.</p>
 </section>
 
 <section id="contact">
