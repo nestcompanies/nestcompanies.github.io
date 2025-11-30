@@ -16,7 +16,7 @@
       --primary: #ffffff;
       --muted: #d4d4d4;
       --border: #262626;
-      --highlight: #2b8bff; /* solid blue button color */
+      --highlight: #2b8bff; /* Royal / neon blue */
       --shadow: 0 18px 40px rgba(0,0,0,0.6);
       --radius-xl: 24px;
       --radius-lg: 18px;
@@ -27,6 +27,7 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      -webkit-tap-highlight-color: transparent;
     }
 
     body {
@@ -139,9 +140,6 @@
         linear-gradient(145deg, rgba(255,255,255,0.06), rgba(0,0,0,0.95)),
         radial-gradient(circle at top right, rgba(43,139,255,0.22), transparent);
       box-shadow: var(--shadow);
-      display: grid;
-      grid-template-columns: minmax(0, 3.2fr) minmax(0, 2.3fr);
-      gap: 26px;
       border: 1px solid rgba(255,255,255,0.08);
     }
 
@@ -157,31 +155,7 @@
       font-size: clamp(2.1rem, 3vw, 2.6rem);
       line-height: 1.1;
       margin-bottom: 16px;
-      color: var(--primary); /* keep hero heading white */
-    }
-
-    .hero p {
-      font-size: 1rem;
       color: var(--primary);
-      opacity: 0.96;
-      margin-bottom: 18px;
-      max-width: 34rem;
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 22px;
-    }
-
-    .tag-pill {
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.25);
-      padding: 8px 16px;
-      font-size: 0.88rem;
-      color: var(--primary);
-      background: rgba(0,0,0,0.45);
     }
 
     .hero-cta {
@@ -189,6 +163,7 @@
       flex-wrap: wrap;
       gap: 16px;
       align-items: center;
+      margin-top: 10px;
     }
 
     .btn-primary {
@@ -215,45 +190,7 @@
       color: var(--muted);
     }
 
-    .hero-panel {
-      background: rgba(0,0,0,0.7);
-      border-radius: 20px;
-      padding: 18px 18px 14px;
-      border: 1px solid rgba(255,255,255,0.12);
-      backdrop-filter: blur(10px);
-    }
-
-    .hero-panel-title {
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-
-    .hero-panel-grid {
-      display: grid;
-      gap: 12px;
-    }
-
-    .hero-chip {
-      padding: 12px 14px;
-      border-radius: 16px;
-      background: #101217;
-      border: 1px solid rgba(255,255,255,0.14);
-      font-size: 0.9rem;
-    }
-
-    .hero-chip span {
-      display: block;
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 2px;
-    }
-
-    /* IMPACT SECTION with WAREHOUSE BACKGROUND */
+    /* GENERIC SECTIONS */
 
     section {
       margin-top: 56px;
@@ -263,9 +200,31 @@
       font-size: 1.05rem;
       text-transform: uppercase;
       letter-spacing: 0.2em;
-      color: var(--muted);
+      color: var(--highlight); /* section titles in blue */
       margin-bottom: 16px;
     }
+
+    .card {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 20px 20px 18px;
+      box-shadow: 0 12px 26px rgba(0,0,0,0.45);
+    }
+
+    .card h4 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+      color: var(--primary);
+    }
+
+    .card p {
+      font-size: 0.94rem;
+      color: var(--primary);
+      opacity: 0.95;
+    }
+
+    /* IMPACT SECTION USING warehouse.png */
 
     #impact {
       position: relative;
@@ -282,7 +241,7 @@
       inset: 0;
       background:
         linear-gradient(to bottom, rgba(0,0,0,0.96), rgba(0,0,0,0.88)),
-        url("Efficient-Warehouse-Design-870x500.png") center/cover no-repeat;
+        url("warehouse.png") center/cover no-repeat;
       opacity: 0.9;
       z-index: -1;
     }
@@ -320,37 +279,19 @@
       gap: 20px;
     }
 
-    .card {
-      background: var(--bg-alt);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      padding: 20px 20px 18px;
-      box-shadow: 0 12px 26px rgba(0,0,0,0.45);
-    }
-
-    .card-pill {
+    .pill {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       padding: 4px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.16);
-      font-size: 0.8rem;
+      border: 1px solid var(--highlight);
+      font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
-    .card h4 {
-      font-size: 1rem;
-      margin-bottom: 6px;
-      color: var(--primary);
-    }
-
-    .card p {
-      font-size: 0.94rem;
-      color: var(--primary);
-      opacity: 0.95;
+      background: var(--highlight);
+      color: #02040a;
+      margin-bottom: 10px;
     }
 
     /* ABOUT */
@@ -392,14 +333,6 @@
       background: #000;
     }
 
-    .calendar-card {
-      background: var(--bg-alt);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      padding: 18px 18px 16px;
-      box-shadow: 0 12px 26px rgba(0,0,0,0.45);
-    }
-
     .contact-note {
       font-size: 0.9rem;
       color: var(--primary);
@@ -410,15 +343,59 @@
       color: var(--primary);
     }
 
-    .office-card {
-      margin-top: 18px;
-      background: var(--bg-alt);
-      border-radius: var(--radius-lg);
+    /* Contact toggles */
+
+    .contact-toggle {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .toggle-btn {
+      padding: 10px 18px;
+      border-radius: 999px;
       border: 1px solid var(--border);
-      padding: 16px 18px;
-      font-size: 0.9rem;
+      background: #05070a;
       color: var(--primary);
-      opacity: 0.96;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .toggle-btn:hover {
+      border-color: rgba(255,255,255,0.35);
+    }
+
+    .toggle-btn.active {
+      background: var(--highlight);
+      color: #050910;
+      border-color: var(--highlight);
+      box-shadow: 0 12px 26px rgba(43,139,255,0.5);
+    }
+
+    .contact-pane {
+      display: none;
+    }
+
+    .contact-pane.active {
+      display: block;
+    }
+
+    .office-card {
+      margin-top: 22px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #05070a;
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.55);
+    }
+
+    .office-card img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     footer {
@@ -440,14 +417,6 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-panel {
-        order: 1;
       }
 
       .about-grid,
@@ -494,49 +463,20 @@
     </header>
 
     <main>
-      <!-- HERO -->
+      <!-- HERO (cleaned) -->
       <section class="hero">
         <div>
           <div class="hero-kicker">Strategic Consulting</div>
           <h2>Bridging operations, security, and technology to move your business faster.</h2>
-          <p>
-            Nest Companies LLC is a focused consulting firm at the intersection of
-            <strong>Supply Chain &amp; Logistics</strong>, <strong>Cybersecurity &amp; Risk Mitigation</strong>, and
-            <strong>Technology &amp; Automation</strong>.
-          </p>
-
-          <div class="hero-tags">
-            <span class="tag-pill">Freight &amp; logistics strategy</span>
-            <span class="tag-pill">Cyber &amp; operational risk</span>
-            <span class="tag-pill">Process &amp; systems automation</span>
-          </div>
 
           <div class="hero-cta">
             <a href="#contact"><button class="btn-primary">Schedule a Conversation</button></a>
             <span class="hero-note">Advisory, project-based, and fractional support available.</span>
           </div>
         </div>
-
-        <aside class="hero-panel">
-          <div class="hero-panel-title">Where we create impact</div>
-          <div class="hero-panel-grid">
-            <div class="hero-chip">
-              <span>Supply chain &amp; logistics</span>
-              Network optimization, TMS strategy, brokerage enablement, carrier controls.
-            </div>
-            <div class="hero-chip">
-              <span>Cybersecurity &amp; risk</span>
-              Fraud prevention, vendor risk, policy &amp; process design, response playbooks.
-            </div>
-            <div class="hero-chip">
-              <span>Technology &amp; automation</span>
-              Workflow design, systems integration, and automation to reduce manual work.
-            </div>
-          </div>
-        </aside>
       </section>
 
-      <!-- IMPACT SECTION with warehouse background -->
+      <!-- IMPACT SECTION (KEEPING this one) -->
       <section id="impact">
         <div class="section-title">Where we create impact</div>
         <div class="impact-grid">
@@ -560,24 +500,25 @@
         <div class="section-title">Services</div>
         <div class="services-grid">
           <article class="card">
-            <div class="card-pill">Supply Chain &amp; Logistics</div>
+            <div class="pill">Supply Chain &amp; Logistics</div>
             <h4>Operational &amp; Network Strategy</h4>
             <p>
-              Design and refine freight brokerage and managed transportation operations, from carrier strategy and KPIs to TMS and visibility tooling selection.
+              Design and refine freight brokerage and managed transportation operations, from carrier strategy and
+              KPIs to TMS and visibility tooling selection.
             </p>
           </article>
 
           <article class="card">
-            <div class="card-pill">Cybersecurity &amp; Risk</div>
+            <div class="pill">Cybersecurity &amp; Risk</div>
             <h4>Fraud &amp; Risk Mitigation</h4>
             <p>
-              Build practical controls that protect loads, data, and revenue: vetting workflows, carrier and vendor
+              Build practical controls that protect shipments, data, and revenue: vetting workflows, carrier and vendor
               due diligence, and incident-response procedures tailored to logistics.
             </p>
           </article>
 
           <article class="card">
-            <div class="card-pill">Technology &amp; Automation</div>
+            <div class="pill">Technology &amp; Automation</div>
             <h4>Systems &amp; Automation Design</h4>
             <p>
               Map and automate critical workflows using your existing stack—reducing manual touches, improving data
@@ -621,20 +562,31 @@
       <!-- CONTACT -->
       <section id="contact">
         <div class="section-title">Contact</div>
+
+        <!-- Buttons row -->
+        <div class="contact-toggle">
+          <button class="toggle-btn" data-target="contact-message">
+            Send us a message
+          </button>
+          <button class="toggle-btn" data-target="contact-calendar">
+            Schedule a conversation
+          </button>
+        </div>
+
         <div class="contact-grid">
-          <!-- Zoho Website Form -->
-          <div class="card zoho-form">
-            <h4>Project Inquiry</h4>
+          <!-- Zoho Website Form (hidden until button click) -->
+          <div id="contact-message" class="card contact-pane">
+            <h4>Project inquiry</h4>
             <iframe
               aria-label="Website"
               frameborder="0"
-              style="height:500px;width:100%;border:none;"
-              src="https://forms.zohopublic.com/sbirdnestcomp1/form/Website/formperma/u7Vw87et6J9spuCuqfTT7vNYdU3qKUfj0xtJniqSvws">
+              src="https://forms.zohopublic.com/sbirdnestcomp1/form/Website/formperma/u7Vw87et6J9spuCuqfTT7vNYdU3qKUfj0xtJniqSvws"
+              style="height:500px;width:100%;border:none;">
             </iframe>
           </div>
 
-          <!-- Calendar + How we engage -->
-          <div class="calendar-card">
+          <!-- Calendar (hidden until button click) -->
+          <div id="contact-calendar" class="card contact-pane">
             <h4>Schedule a conversation</h4>
             <p class="contact-note" style="margin-bottom:10px;">
               Pick a time that works best for you using the calendar below.
@@ -648,25 +600,18 @@
                 marginwidth="0"
                 marginheight="0"
                 allowtransparency="true"
-                style="width:100%;height:350px;border:none;">
+                style="width:100%;height:500px;border:none;">
               </iframe>
             </div>
             <p class="contact-note">
-              <strong>Let’s start with a conversation.</strong><br /><br />
-              Tell us where you’re feeling the most pressure—whether that’s freight operations, cyber risk, or manual
-              processes that won’t scale. We’ll respond with next steps and, if it makes sense, schedule an initial
-              consultation.
-            </p>
-            <p class="contact-note" style="margin-top: 10px;">
               Prefer email? Reach out directly at <strong>info@nestcompaniesllc.com</strong>.
             </p>
           </div>
         </div>
 
+        <!-- Office image card -->
         <div class="office-card">
-          <strong>Office locations</strong><br />
-          📍 Plano, Texas<br />
-          📍 Overland Park, Kansas
+          <img src="offices.png" alt="Office locations in Plano, TX and Overland Park, KS" />
         </div>
       </section>
     </main>
@@ -678,7 +623,31 @@
   </div>
 
   <script>
+    // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Contact toggles
+    const toggleButtons = document.querySelectorAll(".toggle-btn");
+    const panes = document.querySelectorAll(".contact-pane");
+
+    toggleButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const targetId = btn.getAttribute("data-target");
+
+        // Button active state
+        toggleButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        // Show only the selected pane
+        panes.forEach(pane => {
+          if (pane.id === targetId) {
+            pane.classList.add("active");
+          } else {
+            pane.classList.remove("active");
+          }
+        });
+      });
+    });
   </script>
 </body>
 </html>
