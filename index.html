@@ -41,7 +41,7 @@
     .hero h1 { font-size:48px; font-weight:700; line-height:1.25; }
     .hero p { font-size:19px; max-width:750px; }
 
-    /* Warehouse visual section */
+    /* WAREHOUSE VISUAL — VARIATION A */
     .warehouse-section {
         width:calc(100% - 180px);
         margin:40px auto 0;
@@ -55,14 +55,15 @@
         position:absolute;
         inset:0;
         background:url('warehouse.png') center/cover no-repeat;
-        opacity:0.45;
-        filter:grayscale(80%);
+        opacity:0.92; /* image is now highly visible */
+        filter:grayscale(30%) contrast(1.25);
     }
     .warehouse-overlay {
         position:absolute;
         inset:0;
-        background:radial-gradient(circle at top left, rgba(10,92,255,0.4), transparent),
-                   linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.95));
+        background:
+            radial-gradient(circle at top left, rgba(10,92,255,0.18), transparent),
+            linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.62));
     }
     .warehouse-content {
         position:relative;
@@ -97,7 +98,7 @@
     }
     .impact-box h3 { color:#0A5CFF;margin-bottom:12px; }
 
-    /* SERVICES – card layout (restored) */
+    /* SERVICES */
     .services-section {
         width:calc(100% - 200px);
         margin:40px auto 0;
@@ -123,7 +124,7 @@
         display:inline-block;
         padding:6px 16px;
         border-radius:999px;
-        background:#0A5CFF;      /* blue pill like buttons */
+        background:#0A5CFF;     
         color:white;
         font-size:12px;
         letter-spacing:2px;
@@ -140,7 +141,7 @@
         color:#e2e2e2;
     }
 
-    /* About */
+    /* ABOUT */
     .about {
         width:calc(100% - 200px);
         margin:40px auto 0;
@@ -160,7 +161,7 @@
         margin-bottom:12px;
     }
 
-    /* Contact Buttons */
+    /* CONTACT */
     .contact-buttons {
         display:flex;justify-content:center;gap:18px;margin-top:25px;
     }
@@ -171,7 +172,6 @@
     }
     .cta-btn:hover { background:#2571FF; }
 
-    /* Hidden panels */
     #formBox,#calendarBox { display:none;margin-top:30px; }
 
     iframe {
@@ -181,7 +181,6 @@
         border-radius:10px;
     }
 
-    /* Office Map */
     .office-image {
         width:25%;
         margin-top:60px;
@@ -189,7 +188,6 @@
         opacity:.92;
     }
 
-    /* Simple footer */
     footer {
         margin-top:60px;
         padding:20px 0 35px;
@@ -250,7 +248,6 @@ function toggleForm(target){
     </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
     <h1>Bridging operations, security,<br>and technology to move your business faster.</h1>
     <p>Nest Companies LLC is a consulting firm at the intersection of 
@@ -258,7 +255,6 @@ function toggleForm(target){
     <b>Technology &amp; Automation.</b></p>
 </section>
 
-<!-- SUPPLY CHAIN LANDSCAPE (warehouse image background) -->
 <section id="landscape" class="warehouse-section">
     <div class="warehouse-bg"></div>
     <div class="warehouse-overlay"></div>
@@ -273,77 +269,56 @@ function toggleForm(target){
     </div>
 </section>
 
-<!-- WHERE WE CREATE IMPACT -->
 <section id="impact" class="impact">
-
     <h2>WHERE WE CREATE IMPACT</h2>
-
-    <div class="impact-box">
-        <h3>SUPPLY CHAIN &amp; LOGISTICS</h3>
+    <div class="impact-box"><h3>SUPPLY CHAIN &amp; LOGISTICS</h3>
         Network optimization, TMS strategy, brokerage enablement, carrier controls.
     </div>
-
-    <div class="impact-box">
-        <h3>CYBERSECURITY &amp; RISK</h3>
+    <div class="impact-box"><h3>CYBERSECURITY &amp; RISK</h3>
         Fraud prevention, vendor risk, policy &amp; process design, response playbooks.
     </div>
-
-    <div class="impact-box">
-        <h3>TECHNOLOGY &amp; AUTOMATION</h3>
+    <div class="impact-box"><h3>TECHNOLOGY &amp; AUTOMATION</h3>
         Workflow design, systems integration, and automation to reduce manual work.
     </div>
 </section>
 
-<!-- SERVICES – card layout (restored) -->
 <section id="services" class="services-section">
     <h2>SERVICES</h2>
     <div class="services-grid">
+
         <div class="service-card">
-            <div class="service-pill">SUPPLY CHAIN &amp; LOGISTICS</div>
-            <h3>Operational &amp; Network Strategy</h3>
-            <p>
-                Design and refine freight brokerage and managed transportation operations,
-                from carrier strategy and KPIs to TMS and visibility tooling selection.
-            </p>
+            <div class="service-pill">SUPPLY CHAIN & LOGISTICS</div>
+            <h3>Operational & Network Strategy</h3>
+            <p>Design and refine freight brokerage and managed transportation sales, operations, SOPs, KPIs and visibility tools.</p>
         </div>
 
         <div class="service-card">
-            <div class="service-pill">CYBERSECURITY &amp; RISK</div>
-            <h3>Fraud &amp; Risk Mitigation</h3>
-            <p>
-                Build practical controls that protect loads, data, and revenue:
-                vetting workflows, carrier and vendor due diligence, and
-                incident-response procedures tailored to logistics.
-            </p>
+            <div class="service-pill">CYBERSECURITY & RISK</div>
+            <h3>Fraud & Risk Mitigation</h3>
+            <p>Build practical security controls that protect shipments, data, and revenue: vetting workflows, carrier and vendor due diligence, and incident-response
+procedures tailored to logistics.</p>
         </div>
 
         <div class="service-card">
-            <div class="service-pill">TECHNOLOGY &amp; AUTOMATION</div>
-            <h3>Systems &amp; Automation Design</h3>
-            <p>
-                Map and automate critical workflows using your existing stack—
-                reducing manual touches, improving data quality, and making teams
-                more scalable.
-            </p>
+            <div class="service-pill">TECHNOLOGY & AUTOMATION</div>
+            <h3>Systems & Automation Design</h3>
+            <p>Map and automate critical workflows using your existing stack—reducing manual touches, improving data quality, and making teams more scalable.</p>
         </div>
+
+        <div class="service-card">
+            <div class="service-pill">PROJECT MANAGEMENT</div>
+            <h3>Implementation & Execution</h3>
+            <p>Ensuring brokerages implement new technology successfully — including AI tooling, reporting systems, bolt-on automations, and full TMS transitions or operational rebuilds. We align teams, timelines, process requirements and system configuration, reducing disruption and accelerating go-live readiness.</p>
+        </div>
+
     </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about" class="about">
     <h2>ABOUT NEST COMPANIES LLC</h2>
-    <p>
-        Nest Companies LLC was created to help organizations operate with more confidence in complex,
-        high-risk environments. We combine hands-on freight brokerage and managed transportation
-        experience with a practical approach to cybersecurity and automation.
-    </p>
-    <p>
-        We work as an extension of your team — clarifying the real problems, designing the right
-        processes, and aligning the technology and partners needed to support them.
-    </p>
+    <p>From high-risk freight operations to complex technology stacks, Nest Companies LLC helps organizations design more resilient, data-driven supply chains. We focus on the practical execution details — sales, operations, system controls, fraud prevention, and workflow automation — so your teams can move faster with less noise.</p>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" style="text-align:center;margin-top:120px;">
     <h2 style="letter-spacing:3px;color:#0A5CFF;">CONTACT</h2>
 
@@ -352,7 +327,6 @@ function toggleForm(target){
         <button class="cta-btn" onclick="toggleForm('calendarBox')">SCHEDULE A CONVERSATION</button>
     </div>
 
-    <!-- Hidden Panels -->
     <div id="formBox">
         <iframe height="480px"
             src="https://forms.zohopublic.com/sbirdnestcomp1/form/Website/formperma/u7Vw87et6J9spuCuqfTT7vNYdU3qKUfj0xtJniqSvws">
@@ -365,7 +339,7 @@ function toggleForm(target){
         </iframe>
     </div>
 
-    <img src="offices.png" class="office-image" alt="Offices in Overland Park, KS and Plano, TX">
+    <img src="offices.png" class="office-image" alt="Offices">
 </section>
 
 <footer>
