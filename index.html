@@ -41,7 +41,7 @@
     .hero h1 { font-size:48px; font-weight:700; line-height:1.25; }
     .hero p { font-size:19px; max-width:750px; }
 
-    /* WAREHOUSE VISUAL — VARIATION A */
+    /* WAREHOUSE LANDSCAPE – zoomed out & darker */
     .warehouse-section {
         width:calc(100% - 180px);
         margin:40px auto 0;
@@ -54,21 +54,22 @@
     .warehouse-bg {
         position:absolute;
         inset:0;
-        background:url('warehouse.png') center/cover no-repeat;
-        opacity:0.92; /* image is now highly visible */
-        filter:grayscale(30%) contrast(1.25);
+        background:url('warehouse.png') center/contain no-repeat; /* zoomed out so full warehouse/trucks show */
+        opacity:0.9;
+        filter:brightness(0.55) contrast(1.2) saturate(1.1);      /* darker, deep blue */
     }
     .warehouse-overlay {
         position:absolute;
         inset:0;
         background:
-            radial-gradient(circle at top left, rgba(10,92,255,0.18), transparent),
-            linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.62));
+            radial-gradient(circle at top left, rgba(10,92,255,0.16), transparent),
+            linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.8)); /* darker overlay for text readability */
     }
     .warehouse-content {
         position:relative;
         padding:40px 60px;
         z-index:2;
+        text-shadow:0 3px 12px rgba(0,0,0,0.9); /* keeps “Supply Chain Landscape” crisp */
     }
     .warehouse-content h2 {
         letter-spacing:4px;
@@ -80,45 +81,31 @@
         font-size:17px;
     }
 
-    /* WHERE WE CREATE IMPACT */
-    .impact {
-        width:calc(100% - 200px);
-        margin:90px auto;
-        background:rgba(255,255,255,0.03);
-        padding:50px;
-        border-radius:25px;
-        border:1px solid rgba(255,255,255,0.08);
-    }
-    .impact h2 { letter-spacing:4px;color:#0A5CFF;margin-bottom:32px; }
-    .impact-box {
-        border:1px solid rgba(255,255,255,0.12);
-        border-radius:16px;
-        padding:32px;margin-bottom:25px;
-        background:rgba(255,255,255,0.03);
-    }
-    .impact-box h3 { color:#0A5CFF;margin-bottom:12px; }
-
     /* SERVICES */
     .services-section {
         width:calc(100% - 200px);
-        margin:40px auto 0;
+        margin:70px auto 0;
     }
     .services-section h2 {
         letter-spacing:4px;
         color:#0A5CFF;
         margin-bottom:26px;
     }
+
+    /* grid so all boxes align; cards stretch to same height */
     .services-grid {
-        display:flex;
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
         gap:24px;
-        flex-wrap:wrap;
     }
     .service-card {
-        flex:1 1 280px;
         background:rgba(255,255,255,0.03);
         border-radius:20px;
         padding:26px 28px 30px;
         border:1px solid rgba(255,255,255,0.12);
+        display:flex;
+        flex-direction:column;
+        height:100%;          /* equal height in each grid cell */
     }
     .service-pill {
         display:inline-block;
@@ -139,12 +126,13 @@
         font-size:15px;
         line-height:1.6;
         color:#e2e2e2;
+        flex:1;               /* pushes cards to a consistent layout */
     }
 
     /* ABOUT */
     .about {
         width:calc(100% - 200px);
-        margin:40px auto 0;
+        margin:60px auto 0;
         padding:50px;
         border-radius:25px;
         background:rgba(255,255,255,0.03);
@@ -162,13 +150,29 @@
     }
 
     /* CONTACT */
+    #contact {
+        text-align:center;
+        margin-top:120px;
+    }
+    #contact h2 {
+        letter-spacing:3px;
+        color:#0A5CFF;
+    }
     .contact-buttons {
-        display:flex;justify-content:center;gap:18px;margin-top:25px;
+        display:flex;
+        justify-content:center;
+        gap:18px;
+        margin-top:25px;
     }
     .cta-btn {
-        background:#0A5CFF;color:white;padding:12px 30px;
-        border-radius:6px;border:none;font-size:15px;
-        letter-spacing:1px;cursor:pointer;
+        background:#0A5CFF;
+        color:white;
+        padding:12px 30px;
+        border-radius:6px;
+        border:none;
+        font-size:15px;
+        letter-spacing:1px;
+        cursor:pointer;
     }
     .cta-btn:hover { background:#2571FF; }
 
@@ -203,7 +207,6 @@
     @media (max-width: 900px){
         .hero,
         .warehouse-section,
-        .impact,
         .services-section,
         .about,
         footer {
@@ -237,11 +240,10 @@ function toggleForm(target){
 
 <header>
     <div style="display:flex;align-items:center;gap:18px;">
-        <img src="logo.png" style="height:40px;">
+        <img src="logo.png" style="height:40px;" alt="Nest Companies LLC logo">
         <span style="font-size:22px;letter-spacing:3px;">NEST COMPANIES LLC</span>
     </div>
     <nav>
-        <a href="#impact">IMPACT</a>
         <a href="#services">SERVICES</a>
         <a href="#about">ABOUT</a>
         <a href="#contact">CONTACT</a>
@@ -269,18 +271,7 @@ function toggleForm(target){
     </div>
 </section>
 
-<section id="impact" class="impact">
-    <h2>WHERE WE CREATE IMPACT</h2>
-    <div class="impact-box"><h3>SUPPLY CHAIN &amp; LOGISTICS</h3>
-        Network optimization, TMS strategy, brokerage enablement, carrier controls.
-    </div>
-    <div class="impact-box"><h3>CYBERSECURITY &amp; RISK</h3>
-        Fraud prevention, vendor risk, policy &amp; process design, response playbooks.
-    </div>
-    <div class="impact-box"><h3>TECHNOLOGY &amp; AUTOMATION</h3>
-        Workflow design, systems integration, and automation to reduce manual work.
-    </div>
-</section>
+<!-- WHERE WE CREATE IMPACT SECTION REMOVED ON PURPOSE -->
 
 <section id="services" class="services-section">
     <h2>SERVICES</h2>
@@ -295,8 +286,7 @@ function toggleForm(target){
         <div class="service-card">
             <div class="service-pill">CYBERSECURITY & RISK</div>
             <h3>Fraud & Risk Mitigation</h3>
-            <p>Build practical security controls that protect shipments, data, and revenue: vetting workflows, carrier and vendor due diligence, and incident-response
-procedures tailored to logistics.</p>
+            <p>Build practical security controls that protect shipments, data, and revenue: vetting workflows, carrier and vendor due diligence, and incident-response procedures tailored to logistics.</p>
         </div>
 
         <div class="service-card">
@@ -319,8 +309,8 @@ procedures tailored to logistics.</p>
     <p>From high-risk freight operations to complex technology stacks, Nest Companies LLC helps organizations design more resilient, data-driven supply chains. We focus on the practical execution details — sales, operations, system controls, fraud prevention, and workflow automation — so your teams can move faster with less noise.</p>
 </section>
 
-<section id="contact" style="text-align:center;margin-top:120px;">
-    <h2 style="letter-spacing:3px;color:#0A5CFF;">CONTACT</h2>
+<section id="contact">
+    <h2>CONTACT</h2>
 
     <div class="contact-buttons">
         <button class="cta-btn" onclick="toggleForm('formBox')">SEND US A MESSAGE</button>
@@ -339,7 +329,7 @@ procedures tailored to logistics.</p>
         </iframe>
     </div>
 
-    <img src="offices.png" class="office-image" alt="Offices">
+    <img src="offices.png" class="office-image" alt="Offices in Overland Park, KS and Plano, TX">
 </section>
 
 <footer>
