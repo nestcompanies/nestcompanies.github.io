@@ -259,16 +259,16 @@
       overflow: hidden;
       box-shadow: var(--shadow-main);
       border: 1px solid rgba(255, 255, 255, 0.06);
-      /* UPDATED BACKGROUND IMAGE */
+      /* ADJUSTED BACKGROUND OVERLAY TO INCREASE IMAGE VISIBILITY */
       background:
         linear-gradient(
           110deg,
-          rgba(5, 7, 18, 0.96) 0%,
-          rgba(5, 7, 18, 0.9) 45%,
-          rgba(5, 7, 18, 0.86) 65%,
-          rgba(5, 7, 18, 0.9) 100%
+          rgba(5, 7, 18, 0.75) 0%,  /* Reduced opacity from 0.96 */
+          rgba(5, 7, 18, 0.7) 45%,   /* Reduced opacity from 0.9 */
+          rgba(5, 7, 18, 0.65) 65%,  /* Reduced opacity from 0.86 */
+          rgba(5, 7, 18, 0.7) 100%   /* Reduced opacity from 0.9 */
         ),
-        url("supply-chain-image.png") center/cover no-repeat; /* Updated filename */
+        url("supply-chain-image.png") center/cover no-repeat;
       background-blend-mode: multiply;
     }
 
