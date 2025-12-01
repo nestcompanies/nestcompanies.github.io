@@ -9,6 +9,7 @@
     content="Nest Companies LLC helps organizations strengthen supply chains, mitigate cyber risk, and design practical automation and controls."
   />
   
+  <!-- INTER FONT IMPORT (REPLACING SYSTEM FONT) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -287,7 +288,7 @@
     .landscape h3 {
       font-size: 1.5rem; /* Larger heading */
       margin-bottom: 12px;
-      color: var(--primary); /* ADJUSTED: Forces the main headline back to WHITE */
+      color: var(--primary); /* Keeps white font for headline 2 */
     }
 
     .landscape p {
@@ -361,7 +362,7 @@
     .about-card h4 {
       font-size: 1.15rem; /* Larger heading */
       margin-bottom: 8px;
-      color: var(--primary); /* ADJUSTED: Forces the About headline back to WHITE */
+      color: var(--primary); /* Keeps white font for headline 1 */
     }
 
     .about-card p {
@@ -442,8 +443,6 @@
       display: none; 
     }
     
-    /* #contact-form-wrap removed its separate CSS block as it's now handled by JS */
-
     .embed-wrap iframe {
       width: 100%;
       height: 400px; /* Taller iframe */
@@ -452,6 +451,18 @@
     .contact-note {
       font-size: 0.95rem; /* Larger paragraph */
       color: var(--muted);
+    }
+
+    /* Style for the email hyperlink, ensuring it is blue (var(--accent)) */
+    .contact-note a {
+      color: var(--accent);
+      font-weight: 600;
+      border-bottom: 1px solid transparent;
+      transition: border-bottom 0.2s ease;
+    }
+
+    .contact-note a:hover {
+        border-bottom: 1px solid var(--accent);
     }
 
     .contact-note strong {
@@ -549,6 +560,7 @@
     </header>
 
     <main>
+      <!-- HERO -->
       <section class="hero">
         <div>
           <div class="hero-kicker">Strategic consulting</div>
@@ -580,6 +592,7 @@
         </aside>
       </section>
 
+      <!-- SUPPLY CHAIN LANDSCAPE (UPDATED TEXT) -->
       <section id="impact">
         <div class="section-inner">
           <div class="landscape">
@@ -597,6 +610,7 @@
         </div>
       </section>
 
+      <!-- SERVICES -->
       <section id="services">
         <div class="section-inner">
           <div class="section-title">Services</div>
@@ -642,6 +656,7 @@
         </div>
       </section>
 
+      <!-- ABOUT -->
       <section id="about">
         <div class="section-inner">
           <div class="section-title">About Nest Companies</div>
@@ -656,6 +671,7 @@
         </div>
       </section>
 
+      <!-- CONTACT -->
       <section id="contact">
         <div class="section-inner">
           <div class="section-title">Contact</div>
@@ -691,7 +707,7 @@
                 consultation.
               </p>
               <p class="contact-note" style="margin-top: 12px;">
-                Prefer email? Reach out directly at <strong>info@nestcompaniesllc.com</strong>.
+                Prefer email? Reach out directly at <a href="mailto:info@nestcompaniesllc.com">info@nestcompaniesllc.com</a>.
               </p>
 
               <div class="offices-strip" style="margin-top: 20px;">
