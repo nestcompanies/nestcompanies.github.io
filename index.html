@@ -44,7 +44,7 @@
       font-size: 17px; /* Increased base font size from 16px/default */
     }
 
-    * {
+    * { /* ESSENTIAL CSS SELECTOR, NOT REMOVED */
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -287,6 +287,7 @@
     .landscape h3 {
       font-size: 1.5rem; /* Larger heading */
       margin-bottom: 12px;
+      color: var(--accent); /* Forces the main headline to blue */
     }
 
     .landscape p {
@@ -360,6 +361,7 @@
     .about-card h4 {
       font-size: 1.15rem; /* Larger heading */
       margin-bottom: 8px;
+      color: var(--accent); /* Forces the About headline to blue */
     }
 
     .about-card p {
@@ -440,9 +442,7 @@
       display: none; 
     }
     
-    #contact-form-wrap {
-        display: block; /* Ensures the default tab is visible on load */
-    }
+    /* #contact-form-wrap { REMOVED THIS BLOCK } */
 
     .embed-wrap iframe {
       width: 100%;
@@ -554,11 +554,12 @@
           <div class="hero-kicker">Strategic consulting</div>
           <h2>Bridging operations, security, and technology to move your business faster.</h2>
           <p>
-            Nest Companies LLC is a **consulting firm** at the intersection of
+            Nest Companies LLC is a consulting firm at the intersection of
             **Supply Chain &amp; Logistics**, **Cybersecurity &amp; Risk Mitigation**, and
             **Technology &amp; Automation**.
           </p>
-          </div>
+          
+        </div>
 
         <aside class="hero-panel">
           <div class="hero-panel-title">Where we create impact</div>
@@ -588,7 +589,7 @@
               <p>
                 We bridge the gap between sales, operations, technology, and risk mitigation. By optimizing sales workflows, 
                 tightening security protocols, and incorporating automation technology reducing manual tasks, we clear the path 
-                for your business to scale efficiently, reducing chaos, and effectively deliver solutions that **increase profitability**. 
+                for your business to scale efficiently, reducing chaos, and effectively deliver solutions that increase profitability. 
                 We handle the complexity so your team can focus on execution.
               </p>
             </div>
@@ -714,6 +715,9 @@
     const tabs = document.querySelectorAll(".btn-tab");
     const formWrap = document.getElementById("contact-form-wrap");
     const calendarWrap = document.getElementById("contact-calendar-wrap");
+
+    // FIX: Ensures the default form wrapper is displayed on load
+    document.getElementById("contact-form-wrap").style.display = "block";
 
     tabs.forEach((tab) => {
       tab.addEventListener("click", () => {
