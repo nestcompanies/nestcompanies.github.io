@@ -8,7 +8,22 @@
     name="description"
     content="Nest Companies LLC helps organizations strengthen supply chains, mitigate cyber risk, and design practical automation and controls."
   />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
   <style>
+    /* SMOOTH SCROLLING AND OFFSET FOR ANCHOR LINKS */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Offsets the scroll so sticky header doesn't cover section titles */
+    section {
+      scroll-margin-top: 100px;
+    }
+
     :root {
       --bg: #050608;
       --bg-alt: #0b0d11;
@@ -23,7 +38,8 @@
       --radius-md: 16px;
       --shadow-main: 0 24px 60px rgba(0, 0, 0, 0.75);
       --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.55);
-      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      /* UPDATED FONT STACK */
+      --font-main: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         sans-serif;
       --section-gap: 82px;
     }
@@ -58,12 +74,20 @@
       padding: 20px 18px 72px;
     }
 
+    /* STICKY HEADER STYLES */
     header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 18px;
-      padding: 10px 0 18px;
+      padding: 14px 20px;
+      position: sticky; /* Sticky Position */
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 6, 8, 0.85); /* Semi-transparent dark background */
+      backdrop-filter: blur(12px); /* The "frosted glass" effect */
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      margin-bottom: 20px;
     }
 
     .brand {
@@ -185,23 +209,6 @@
     .hero p strong {
       color: var(--primary);
       font-weight: 600;
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 18px;
-    }
-
-    .tag {
-      padding: 6px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      font-size: 0.78rem;
-      color: var(--muted-soft);
-      background: rgba(3, 8, 23, 0.6);
-      backdrop-filter: blur(6px);
     }
 
     .hero-panel {
@@ -482,16 +489,31 @@
 
       header {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        padding-bottom: 18px;
       }
 
+      /* ENLARGED LOGO FOR MOBILE VIEW */
+      .brand-logo-wrap {
+        width: 60px;
+        height: 42px;
+      }
+      /* END ENLARGED LOGO */
+
       nav {
-        gap: 16px;
+        gap: 18px;
         flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
       }
 
       .hero {
         padding: 24px 18px 24px;
+      }
+      
+      .hero h2 {
+        font-size: 1.8rem; 
       }
 
       .landscape-inner {
@@ -519,7 +541,6 @@
     </header>
 
     <main>
-      <!-- HERO -->
       <section class="hero">
         <div>
           <div class="hero-kicker">Strategic consulting</div>
@@ -529,12 +550,7 @@
             <strong>Supply Chain &amp; Logistics</strong>, <strong>Cybersecurity &amp; Risk Mitigation</strong>, and
             <strong>Technology &amp; Automation</strong>.
           </p>
-          <div class="hero-tags">
-            <span class="tag">Freight &amp; logistics strategy</span>
-            <span class="tag">Cyber &amp; operational risk</span>
-            <span class="tag">Process &amp; systems automation</span>
           </div>
-        </div>
 
         <aside class="hero-panel">
           <div class="hero-panel-title">Where we create impact</div>
@@ -555,25 +571,23 @@
         </aside>
       </section>
 
-      <!-- SUPPLY CHAIN LANDSCAPE -->
       <section id="impact">
         <div class="section-inner">
           <div class="landscape">
             <div class="landscape-inner">
               <div class="landscape-title">Supply chain landscape</div>
-              <h3>Designing resilient, data-driven operations.</h3>
+              <h3>Building high-velocity, efficient operations.</h3>
               <p>
-                From high-risk freight operations to complex technology stacks, Nest Companies LLC helps organizations
-                design more resilient, data-driven supply chains. We focus on the practical execution details — sales,
-                operations, system controls, fraud prevention, and workflow automation — so your teams can move faster
-                with less noise.
+                We bridge the gap between **sales, operations, technology, and risk mitigation**. By optimizing sales workflows, 
+                tightening security protocols, and incorporating automation technology reducing manual tasks, we clear the path 
+                for your business to scale efficiently, reducing chaos, and effectively deliver solutions that **increase profitability**. 
+                We handle the complexity so your team can focus on execution.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SERVICES -->
       <section id="services">
         <div class="section-inner">
           <div class="section-title">Services</div>
@@ -619,7 +633,6 @@
         </div>
       </section>
 
-      <!-- ABOUT -->
       <section id="about">
         <div class="section-inner">
           <div class="section-title">About Nest Companies</div>
@@ -634,7 +647,6 @@
         </div>
       </section>
 
-      <!-- CONTACT -->
       <section id="contact">
         <div class="section-inner">
           <div class="section-title">Contact</div>
