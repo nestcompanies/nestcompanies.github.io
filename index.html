@@ -34,14 +34,14 @@
       --muted-soft: #7e8596;
       --accent: #4da3ff;
       --accent-soft: rgba(77, 163, 255, 0.12);
-      --radius-lg: 22px;
-      --radius-md: 16px;
+      --radius-lg: 26px; /* Slightly larger radius */
+      --radius-md: 18px; /* Slightly larger radius */
       --shadow-main: 0 24px 60px rgba(0, 0, 0, 0.75);
       --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.55);
-      /* UPDATED FONT STACK */
       --font-main: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         sans-serif;
-      --section-gap: 82px;
+      --section-gap: 120px; /* Increased from 82px for bigger sections */
+      font-size: 17px; /* Increased base font size from 16px/default */
     }
 
     * {
@@ -69,9 +69,9 @@
     }
 
     .page {
-      max-width: 1200px;
+      max-width: 1400px; /* Increased from 1200px */
       margin: 0 auto;
-      padding: 20px 18px 72px;
+      padding: 24px 24px 80px; /* Adjusted padding */
     }
 
     /* STICKY HEADER STYLES */
@@ -97,8 +97,8 @@
     }
 
     .brand-logo-wrap {
-      width: 46px;
-      height: 32px;
+      width: 90px; /* INCREASED SIZE */
+      height: 62px; /* INCREASED SIZE */
     }
 
     .brand-logo-wrap img {
@@ -115,7 +115,7 @@
     }
 
     nav {
-      font-size: 0.86rem;
+      font-size: 0.9rem; /* Slightly larger nav links */
       text-transform: uppercase;
       letter-spacing: 0.18em;
       display: flex;
@@ -154,15 +154,15 @@
     }
 
     .section-inner {
-      max-width: 1040px;
+      max-width: 1100px; /* Increased from 1040px */
       margin: 0 auto;
     }
 
     .section-title {
       text-transform: uppercase;
       letter-spacing: 0.22em;
-      font-size: 0.9rem;
-      color: var(--muted-soft);
+      font-size: 0.95rem; /* Slightly larger section titles */
+      color: var(--accent); /* Now Blue */
       margin-bottom: 18px;
     }
 
@@ -170,7 +170,7 @@
 
     .hero {
       margin-top: 28px;
-      padding: 34px 28px 32px;
+      padding: 38px 32px 36px; /* Increased padding */
       border-radius: var(--radius-lg);
       background: radial-gradient(
           circle at top left,
@@ -182,28 +182,28 @@
       border: 1px solid rgba(255, 255, 255, 0.06);
       display: grid;
       grid-template-columns: minmax(0, 3.2fr) minmax(0, 2.5fr);
-      gap: 28px;
+      gap: 32px; /* Increased gap */
       align-items: center;
     }
 
     .hero-kicker {
       text-transform: uppercase;
       letter-spacing: 0.22em;
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       color: var(--muted-soft);
       margin-bottom: 10px;
     }
 
     .hero h2 {
-      font-size: clamp(2rem, 3vw, 2.55rem);
+      font-size: clamp(2.2rem, 3.5vw, 2.8rem); /* Increased size range */
       line-height: 1.12;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
     .hero p {
-      font-size: 0.98rem;
+      font-size: 1rem; /* Slightly larger body text */
       color: var(--muted);
-      max-width: 32rem;
+      max-width: 36rem;
     }
 
     .hero p strong {
@@ -213,39 +213,39 @@
 
     .hero-panel {
       background: radial-gradient(circle at top left, #1b2844, #050608);
-      border-radius: 18px;
-      padding: 18px 18px 16px;
+      border-radius: var(--radius-md);
+      padding: 20px 20px 18px;
       border: 1px solid rgba(255, 255, 255, 0.11);
       backdrop-filter: blur(10px);
     }
 
     .hero-panel-title {
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--muted-soft);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .hero-panel-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 10px;
+      gap: 12px;
     }
 
     .hero-chip {
-      padding: 10px 12px;
-      border-radius: 12px;
+      padding: 12px 14px;
+      border-radius: 14px;
       background: rgba(3, 9, 20, 0.95);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 0.84rem;
+      font-size: 0.88rem; /* Slightly larger chip text */
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 3px;
     }
 
     .hero-chip span {
-      font-size: 0.72rem;
+      font-size: 0.76rem; /* Slightly larger chip category */
       text-transform: uppercase;
       letter-spacing: 0.18em;
       color: var(--muted-soft);
@@ -258,6 +258,7 @@
       overflow: hidden;
       box-shadow: var(--shadow-main);
       border: 1px solid rgba(255, 255, 255, 0.06);
+      /* UPDATED BACKGROUND IMAGE */
       background:
         linear-gradient(
           110deg,
@@ -266,66 +267,66 @@
           rgba(5, 7, 18, 0.86) 65%,
           rgba(5, 7, 18, 0.9) 100%
         ),
-        url("warehouse.png") center right/cover no-repeat;
+        url("supply-chain-image.png") center/cover no-repeat; /* Updated filename */
       background-blend-mode: multiply;
     }
 
     .landscape-inner {
-      padding: 32px 32px 34px;
-      max-width: 640px;
+      padding: 40px 40px 42px; /* Increased padding */
+      max-width: 700px; /* Increased max width */
     }
 
     .landscape-title {
       text-transform: uppercase;
       letter-spacing: 0.22em;
-      font-size: 0.9rem;
+      font-size: 1rem; /* Slightly larger landscape title */
       color: var(--accent);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .landscape h3 {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
+      font-size: 1.5rem; /* Larger heading */
+      margin-bottom: 12px;
     }
 
     .landscape p {
-      font-size: 0.96rem;
+      font-size: 1rem; /* Larger paragraph text */
       color: var(--muted);
     }
 
     /* Services */
 
     #services .section-title {
-      color: var(--muted-soft);
+      color: var(--accent); /* Now Blue */
     }
 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
+      gap: 22px; /* Increased gap */
     }
 
     .service-card {
       background: var(--card);
       border-radius: var(--radius-md);
       border: 1px solid var(--border);
-      padding: 18px 18px 18px;
+      padding: 22px 22px 20px; /* Increased padding */
       box-shadow: var(--shadow-soft);
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      min-height: 190px;
+      gap: 10px;
+      min-height: 220px; /* Increased min height */
     }
 
     .service-pill {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 4px 12px;
+      padding: 5px 14px;
       border-radius: 999px;
       border: 1px solid rgba(77, 163, 255, 0.4);
       background: var(--accent-soft);
-      font-size: 0.7rem;
+      font-size: 0.74rem;
       text-transform: uppercase;
       letter-spacing: 0.2em;
       color: var(--accent);
@@ -333,44 +334,44 @@
     }
 
     .service-card h4 {
-      font-size: 1.02rem;
+      font-size: 1.15rem; /* Larger heading */
       font-weight: 600;
     }
 
     .service-card p {
-      font-size: 0.9rem;
+      font-size: 0.95rem; /* Larger paragraph */
       color: var(--muted);
     }
 
     /* About */
 
     #about .section-title {
-      margin-bottom: 14px;
+      color: var(--accent); /* Now Blue */
     }
 
     .about-card {
       background: var(--card);
       border-radius: var(--radius-md);
       border: 1px solid var(--border);
-      padding: 20px 20px 18px;
+      padding: 24px 24px 22px; /* Increased padding */
       box-shadow: var(--shadow-soft);
     }
 
     .about-card h4 {
-      font-size: 1.02rem;
-      margin-bottom: 6px;
+      font-size: 1.15rem; /* Larger heading */
+      margin-bottom: 8px;
     }
 
     .about-card p {
-      font-size: 0.94rem;
+      font-size: 1rem; /* Larger paragraph */
       color: var(--muted);
     }
 
     /* Offices image inside contact */
 
     .offices-strip {
-      margin-top: 22px;
-      border-radius: 18px;
+      margin-top: 24px;
+      border-radius: 20px; /* Larger radius */
       overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.08);
       background: #030712;
@@ -385,13 +386,14 @@
     /* Contact */
 
     #contact .section-title {
-      margin-bottom: 12px;
+      color: var(--accent); /* Now Blue */
+      margin-bottom: 14px;
     }
 
     .contact-grid {
       display: grid;
       grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
-      gap: 22px;
+      gap: 24px; /* Increased gap */
       align-items: start;
     }
 
@@ -399,24 +401,24 @@
       background: var(--card);
       border-radius: var(--radius-md);
       border: 1px solid var(--border);
-      padding: 18px 18px 16px;
+      padding: 22px 22px 20px; /* Increased padding */
       box-shadow: var(--shadow-soft);
     }
 
     .contact-toggle {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 14px;
+      gap: 12px; /* Increased gap */
+      margin-bottom: 16px;
     }
 
     .btn-tab {
-      padding: 8px 16px;
+      padding: 9px 18px;
       border-radius: 999px;
       border: 1px solid rgba(77, 163, 255, 0.7);
       background: transparent;
       color: var(--accent);
-      font-size: 0.84rem;
+      font-size: 0.88rem; /* Slightly larger button text */
       text-transform: uppercase;
       letter-spacing: 0.18em;
       cursor: pointer;
@@ -429,20 +431,26 @@
     }
 
     .embed-wrap {
-      border-radius: 14px;
+      border-radius: 16px; /* Larger radius */
       overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.1);
       background: #020617;
-      min-height: 360px;
+      min-height: 400px; /* Taller min height */
+      /* Initially hidden, shown by JS */
+      display: none; 
+    }
+    
+    #contact-form-wrap {
+        display: block; /* Ensures the default tab is visible on load */
     }
 
     .embed-wrap iframe {
       width: 100%;
-      height: 360px;
+      height: 400px; /* Taller iframe */
     }
 
     .contact-note {
-      font-size: 0.88rem;
+      font-size: 0.95rem; /* Larger paragraph */
       color: var(--muted);
     }
 
@@ -451,15 +459,15 @@
     }
 
     footer {
-      margin-top: 42px;
-      padding-top: 16px;
+      margin-top: 50px; /* Increased top margin */
+      padding-top: 18px;
       border-top: 1px solid var(--border);
-      font-size: 0.78rem;
+      font-size: 0.82rem; /* Slightly larger footer text */
       color: var(--muted-soft);
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 10px;
+      gap: 12px;
     }
 
     /* Responsive */
@@ -484,40 +492,40 @@
 
     @media (max-width: 640px) {
       .page {
-        padding-inline: 14px;
+        padding-inline: 18px;
       }
 
       header {
         flex-direction: column;
         align-items: center;
-        padding-bottom: 18px;
+        padding-bottom: 22px;
       }
 
       /* ENLARGED LOGO FOR MOBILE VIEW */
       .brand-logo-wrap {
-        width: 60px;
-        height: 42px;
+        width: 95px; /* INCREASED SIZE */
+        height: 66px; /* INCREASED SIZE */
       }
       /* END ENLARGED LOGO */
 
       nav {
-        gap: 18px;
+        gap: 20px;
         flex-wrap: wrap;
         justify-content: center;
         width: 100%;
-        margin-top: 10px;
+        margin-top: 12px;
       }
 
       .hero {
-        padding: 24px 18px 24px;
+        padding: 28px 20px 28px;
       }
       
       .hero h2 {
-        font-size: 1.8rem; 
+        font-size: 2rem; 
       }
 
       .landscape-inner {
-        padding: 24px 18px 26px;
+        padding: 30px 22px 32px;
       }
     }
   </style>
@@ -546,9 +554,9 @@
           <div class="hero-kicker">Strategic consulting</div>
           <h2>Bridging operations, security, and technology to move your business faster.</h2>
           <p>
-            Nest Companies LLC is a <strong>focused consulting firm</strong> at the intersection of
-            <strong>Supply Chain &amp; Logistics</strong>, <strong>Cybersecurity &amp; Risk Mitigation</strong>, and
-            <strong>Technology &amp; Automation</strong>.
+            Nest Companies LLC is a **consulting firm** at the intersection of
+            **Supply Chain &amp; Logistics**, **Cybersecurity &amp; Risk Mitigation**, and
+            **Technology &amp; Automation**.
           </p>
           </div>
 
@@ -578,7 +586,7 @@
               <div class="landscape-title">Supply chain landscape</div>
               <h3>Building high-velocity, efficient operations.</h3>
               <p>
-                We bridge the gap between **sales, operations, technology, and risk mitigation**. By optimizing sales workflows, 
+                We bridge the gap between sales, operations, technology, and risk mitigation. By optimizing sales workflows, 
                 tightening security protocols, and incorporating automation technology reducing manual tasks, we clear the path 
                 for your business to scale efficiently, reducing chaos, and effectively deliver solutions that **increase profitability**. 
                 We handle the complexity so your team can focus on execution.
@@ -661,7 +669,7 @@
                 <iframe aria-label="Website" frameborder="0" src="https://forms.zohopublic.com/sbirdnestcomp1/form/Website/formperma/u7Vw87et6J9spuCuqfTT7vNYdU3qKUfj0xtJniqSvws"></iframe>
               </div>
 
-              <div class="embed-wrap" id="contact-calendar-wrap" style="display:none;">
+              <div class="embed-wrap" id="contact-calendar-wrap">
                 <iframe
                   src="https://calendar.zoho.com/eventreqForm/zz0801123017b5e3754e08cd7b15cf702a2aa40cfe2ee826cd3436d76332ad48e3ce33ffba9348ba1021b1494dcf253a2d52540d3b?theme=0&l=en&tz=America%2FChicago"
                   title="Info @ Nest"
